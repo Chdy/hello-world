@@ -1,0 +1,44 @@
+/*------------------------------------------------
+ 结果：方法参数的使用与调用他的类有关
+      调用的方法根据this和super指针进行判断
+ ------------------------------------------------*/
+class A
+{
+    int x,y;
+    public A(int x,int y)
+    {
+        this.x = x;
+        this.y = y;
+        System.out.println("Point:"+this.print());
+    }
+    public String print()
+    {
+        return "["+x+","+y+"]";
+    }
+    public A()
+    {
+        this(1,1);
+    }
+}
+class B extends A
+{
+    int x = 1;
+    int y = 2;
+    double r;
+    public B(double r,int x,int y)
+    {
+        super(x,y);
+        this.r = r;
+        System.out.println("Circle:"+this.print());
+    }
+    public String print()
+    {
+        return "Center="+super.print()+"r="+r;
+    }
+}
+public class exam{
+    public static void main(String args[ ]){
+        A aa = new A();
+        B bb = new B(3.5,10,20);
+    }
+}

@@ -1,0 +1,31 @@
+void printSigset(FILE * io,const char * prestr,const sigset_t * sigset)
+{
+    int cnt = 0;
+    for (int i = 1; i < NSIG; ++i) {
+        if(sigismember(sigset,i))
+        {
+            cnt++;
+            fprintf(io,"%s%s\n",prestr,strsignal(i));
+        }
+    }
+    if(cnt==0)
+        fprintf(io,"%s empty sigset\n",prestr);
+}
+
+void printSigmask(FILE * io,const char * msg)
+{
+    sigset_t curmask;
+    sigprocmask(SIG_BLOCK,NULL,&curmask);
+    if(msg!=NULL)
+        fprintf(io,"%s",msg);
+    printSigset(io,"\t\t",&curmask);
+}
+
+void printPending(FILE * io,const char * msg)
+{
+    sigset_t sigpend;
+    sigpending(&sigpend);
+    if(msg!=NULL)
+        fprintf(io,"%s",msg);
+    printSigset(io,"\t\t",&sigpend);
+}

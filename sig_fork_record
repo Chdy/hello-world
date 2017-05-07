@@ -1,0 +1,55 @@
+int main(int argc,char ** argv) {
+    int fd;
+    setbuf(stdout,NULL);
+    int flags;
+    sigset_t mask;
+    sigemptyset(&mask);
+    sigaddset(&mask,SIGCHLD);
+    sigprocmask(SIG_BLOCK,&mask,NULL);
+    struct sigvec sa;
+    sa.sv_handler = handle;
+    sa.sv_flags = 0;
+    sa.sv_mask = 0;
+    sigvec(SIGCHLD,&sa,NULL);
+    sigset_t m;
+    sigemptyset(&m);
+    switch(fork()) {
+        case -1:
+            printf("Fork error\n");
+            break;
+        case 0:
+            printf("child existing at pid %d\n",getpid());
+            for(;;)
+                pause();
+            exit(EXIT_SUCCESS);
+        default:
+            sigsuspend(&m);
+            for(;;)
+            {
+                int pid = waitpid(-1,&fd,WUNTRACED|WCONTINUED);
+                printf("waitpid return pid = %d status = %d\n",pid,fd>>8);
+                printWaitStatus(NULL,fd);
+                if(WIFEXITED(fd)||WIFSIGNALED(fd))
+                {
+                    exit(EXIT_SUCCESS);
+                }
+            }
+    }
+    return 1;
+}
+
+void printWaitStatus(char * msg,int status)
+{
+    if(msg!=NULL)
+        printf("%s",msg);
+    if(WIFEXITED(status))
+        printf("child exited,status=%d\n",WEXITSTATUS(status));
+    else if(WIFSIGNALED(status))
+        printf("child killed by signal %s\n",strsignal(WTERMSIG(status)));
+    else if(WIFSTOPPED(status))
+        printf("child stop by signal %s\n",strsignal(WSTOPSIG(status)));
+    else if(WIFCONTINUED(status))
+        printf("child continued\n");
+    else
+        printf("what happened to this child? status=%x\n",(unsigned)status);
+}

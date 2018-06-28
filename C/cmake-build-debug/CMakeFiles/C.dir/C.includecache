@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dengyan/ClionProjects/C/zsb.c
+stdio.h
+-
+memory.h
+-
+math.h
+-
+stdlib.h
+-
+

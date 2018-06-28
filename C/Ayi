@@ -1,0 +1,14 @@
+// 强制转换：类型决定算数处理形式
+// static：和全局变量一样，但是作用域为其被定义的函数里
+// 引用：本质上为指针，等于指针操作，当引用顶层const时，本身需要加const
+// 使用{}初始化：不允许出现精度丢失，如将 int 型数据赋值给 short in 型
+// const type & or const type * 表示不能通过引用或者指针去改变所指向的值
+// 指针常量：type * const 表示该指针值不能改变，type & const估计没有意义
+// 底层const：当将一个const type *类型值赋值给另一个值时，该类型必须也是const type *，因为const type *表示指向的值为常数型，如果将值
+赋给type *类型，则可通过* xxx改变所指向的常数，必须加上const限制；
+// 顶层const：type * const 顶层const赋值给其他值没有影响,type * const xx，对应其指针为type * const * xx,表示*b是只读的；
+// constexpr常量表达式：constexpr *(type * const) 所指向的变量必须定义在函数之外；
+// 类型别名：Example:typedef char * P,const P xx!=const char * xx。第一个等价为char * const xx;
+// auto：auto &时如果对象为常量，必须加上const，因为引用对象与引用本身类型必须一致
+// decltype：当类型含有const，不需要手动添加，decltype((x))类型永远为引用，decltype(*p)也为引用；
+// string：当初始化字符串型数据是，如果只有单参数可使用拷贝初始化(=)或者直接初始化()，但是多参数时推荐直接初始化，比如string xx(?,'?')；

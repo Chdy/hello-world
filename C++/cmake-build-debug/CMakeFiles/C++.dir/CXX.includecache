@@ -15,6 +15,10 @@ string
 /Users/dengyan/ClionProjects/C++/main.cpp
 iostream
 -
+string
+-
+memory
+-
 vector
 -
 list
@@ -52,5 +56,11 @@ set
 unordered_set
 -
 utility
+-
+functional
+-
+new
+-
+type_traits
 -
 

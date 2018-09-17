@@ -1,4 +1,6 @@
 # include <iostream>
+# include <string>
+# include <memory>
 # include <vector>
 # include <list>
 # include <algorithm>
@@ -18,117 +20,221 @@
 # include <set>
 # include <unordered_set>
 # include <utility>
+# include <functional>
+# include <new>
+# include <type_traits>
 
-using namespace std;
-extern int x = 2;
+using std::cin;
+using std::cout;
+using std::endl;
 
-template <class T> void swap(T * a,T * b)
-{
-    T c;
-    c = *a;
-    *a = *b;
-    *b = c;
-}
-
-template <typename T,int S> class A
-{
-    public:
-        T a;
-        T b;
-        A(T a)
-        {
-            this->a = a;
-            this->b = S;
+namespace dy {
+    template<class T>
+    inline T * _allocate(ptrdiff_t size, T *) {
+        std::set_new_handler(0);
+        T *tmp = (T *) (operator new(sizeof(T) * size));
+        if (tmp == 0) {
+            std::cerr << "out of memory" << endl;
+            exit(1);
         }
-        void plu();
-};
-
-template <typename T, int S> void A<T,S>::plu()
-{
-    cout << a << b << endl;
-};
-
-auto arr = [](int x){
-    return [&](int y){
-        return [&](int z){
-                cout << "x " << x << endl;
-                cout << "y " << y << endl;
-                cout << "z " << z << endl;
-                return 1;
-        };
-    };
-};
-
-void read_in(vector<double> homework)
-{
-    int i = 0;
-    double count;
-    while(i++!=5)
-    {
-        cin >> count;
-        homework.push_back(count);
+        return tmp;
     }
+
+    template<class T>
+    inline void _deallocate(T *buffer) {
+        operator delete(buffer);
+    }
+
+    template<class T1, class T2>
+    inline void _construct(T1 *p, const T2 &value) {
+        new(p) T1(value);
+    }
+
+    template<class T>
+    inline void _destroy(T *ptr)
+    {
+        ptr->~T();
+    }
+
+    template <class T>
+    class allocator {
+    public:
+        typedef T value_type;
+        typedef T * pointer;
+        typedef const T * const_pointer;
+        typedef T& reference;
+        typedef const T& const_reference;
+        typedef size_t size_type;
+        typedef ptrdiff_t  difference_type;
+    };
+
+    template <class U>
+    struct rebind {
+        typedef allocator<U> other;
+    };
 }
 
-int c = 3;
+class A {
+public:
+    A() {
+        cout << "A" << endl;
+    }
+    explicit A(int s)
+    {
+        cout << "single parameter" << endl;
+    }
+    A(A &rhs)
+    {
+        cout << "copt" << endl;
+    }
+    ~A() {
+        cout << "xigou" << endl;
+    }
 
-using S1 = Sales_item;
-typedef int * pstring;
+private:
+    int a;
+};
 
-auto change(int (*p)[5]) -> int (*)[5]
-{
-    return p;
+
+
+int main() {//16.1.5
+    std::ostream_iterator<int> out(cout," ");
+    //std::istream_iterator<int> in(cin),eof;
+    //std::copy(in,eof,a.begin());
+    //std::copy(a.begin(),a.end(),out);
+    //cout << a[3] << endl;
+
 }
 
-void print(string & p)
-{
-    cout << "this is a quote func" << p <<endl;
-}
-
-void print(const string & p = "000")
-{
-    cout << "this is a const quote func" << p << endl;
-}
-
-constexpr int cst(int a)
-{
-       return a;
-}
-
-void print(const vector<int>& p)
-{
-    for (auto i : p)
-        cout << i <<" ";
-    cout << endl;
-}
-
-bool isShorter(const string &s1,const string &s2)
-{
-    return s1.size() < s2.size();
-}
-
-bool check_size(const string &s1,int sz)
-{
-    return s1.size() >= sz;
-}
-
-int main() {//6.4.1
-    ostream_iterator<int> out_iter(cout," ");
-    int * p = new int(4);
-    unique_ptr<int> p1(p);
-    p1.reset();
-    *p = 3;
-    cout << *p << endl;
-}
+//std::for_each(b,b+5,[&](A & p) { new (&p) A(); });
 
 
 /*
  *
+ * operator delete(p) 等价于free(p)
+ * new (p) T() 在地址p调用类型T的构造函数
+ * operator new(size)的参数是内存大小，且不会调用对象的构造函数，类似与malloc
+ * new操作符的参数是类型
  *
+ * 模版类型别名: template<typename T> using twin = std::pair<T,T>; twin<std::string> 等价于 pair<string,string>
+ * 令模版自己的类型参数成为友元: 可以在类中添加friend T来使类型T成为类名<T>的友元
+   模版与模版一对多关系，template <typename X> friend class BlobPtr，在Blob类中做此声明，即BlobPtr的所有类型实例都是Blob的友元，此处用的是X，不能用T(不能用与类定义相同的字符)，如果是普通类和模版一对多则用T
+
+    然后在Blob类中加上 friend class BlobPtr<T>; 即可指定BlobPtr<T>是Blob<T>的友元
+    template <typename > class BlobPtr;
+    template <typename > class Blob;
+ * 类模版友元关系: 一对一友好关系，就是指建立对应实例与其友元的友好关系
+ * 在一个类模版的作用域类内，可以直接使用模版名而不必指定模版实参
+ * 对于一个实例化的类模版，其成员只有在使用时才进行实例化，这一特性使得即使某种类型不能完全符合模版操作的要求，我们仍然能用该类型实例化类
+ * 类模版的成员函数: 如果类模版的成员函数在类外部定义，则定义方式类似于函数模版，不过要在函数名前加上类作用域
+ * 类模版: 可看作生成类的一个蓝图，通过在class前加上template <typename T>来实现类模版，在实例化类时需要指定类型，类名<类型>
+ * inline和constexpr的函数模版: 函数模版可以声明为inline和constexpr的，如同非模版函数一样，inline或constexpr说明放在模版参数列表之后，返回类型之前
+ * 非类型模版参数(即将模版参数绑定到常量等等)使用声明符ussigned而不是typename
+ * 函数模版: 模版定义以关键字template开，后跟一个模版参数列表，template<typename T,typename U> 通过函数调用将实参的类型绑定到对应的模版类型名
+ * 虚析构函数: 当对某个指针使用delete时，会调用该指针对象中的析构函数，但是如果静态类型与动态类型不同，可能会调用错误的析构函数，此时将析构函数设置为虚函数，即可避免这个问题
+ * 派生类中的虚函数必须与基类中对应的虚函数有相同的参数列表: 因为派生类中的普通成员函数名会隐藏基类中的同函数名(即使他们的形参列表不同也会隐藏)，而虚函数不同，如果你在派生类中定义了一个与虚函数同名但不同参数的函数，其并不会覆盖虚函数，其只是一个普通的成员函数而已
+ * 默认的继承保护级别: class默认的访问说明符是private的，所以其默认的继承是private的，struct则是public的
+ * 改变个别成员的可访问性: 通过在派生类内部的访问声明符下面使用using可以改变他可以访问的成员的访问属性，比如在public: 下面加上 using Base::b，则即使会使用private继承，b仍然是public属性，前提是b本身对此派生类是可见的(比如b本身是public或者protected，或者他是private，但是该派生类是基类的友元)
+ * 友元的继承: 友元关系无法继承，单对于派生类中，如果它所继承的基类是其他类的友元，那么其基类部分的任何成员可以被该类访问
+ * 派生访问控制符: 控制继承来的成员的访问属性，如果是public继承，那么所有被继承来的成员讲保持原有的访问属性，如果是protected继承，那么所有继承来的公有成员将变为protected访问属性，如果是private继承，那么继承来的所有成员都将变为private访问属性
+ * 抽象基类: 如果不想某个虚函数有确切的定义，可以把它定义为纯虚函数，定义了纯虚函数的类是抽象基类，不能创建抽象基类的对象，我们可以创建抽象基类的派生类的对象，前提是这些类覆盖掉了纯虚函数
+ * 回避虚函数的机制: 如果不希望进行动态绑定，可以通过作用域运算符来强制执行某个特定版本的虚函数，即 类指针->类名::虚函数
+ * final和override: 在虚函数声明的参数列表后加上final关键字，则表示在继承后此成员函数不能被覆盖，在对覆盖后的虚函数声明参数列表后加上override便于编译器找出某些错误
+ * 防止继承的发生: 有时候我们希望定义一种无法被继承的类，通过在类名后跟一个关键字final
+ * 继承与静态成员: 如果基类定义了一个静态成员，则在整个继承体系中都只存在该成员的唯一定义
+ * 派生类构造函数: 虽然在派生类中继承了基类的成员，但是派生类并不能直接初始化他们，必须使用基类的构造函数初始化他们，基类构造函数在初始化列表中调用
+ * 访问控制与继承: 派生类的成员不可访问基类的私有(private)成员，可访问公有(public)和受保护(protected)成员，受保护(protected)成员只有派生类能够访问
+ * 如果对同一个类既提供了转换目标是算数类型的类型转换，也提供了重载的运算符，则将会遇到重载运算符与内置运算符的二义性问题
+ * 显示的类型运算转换符: 同显示的构造函数一样，在前面加上explicit可以消除隐式的转换，必须用static_cast<type>(val)进行显示转换
+ * 类型转换运算符: operator() type() const {}; 就像单参数构造函数可以将参数类型转换为类类型一样，此运算符可以隐式将类类型转换为type类型，
+ * 不能将重载函数的名字存入fcuntion类型的对象中，这样会导致二义性，无法判断存入的是哪个函数指针，有一个方法是用一个其他名字的函数指针保存需要添加的那个函数的名字
+ *
+    std::function<int(int,int)> f = chen; chen是一个函数指针
+    std::map<std::string,std::function<int(int,int)>> table;
+    table.insert({"*",f});
+    table.insert({"+",[](int a,int b) { return a+b; }}); 即使第二个参数不是function类型，实际上也会把他储存在funciton类型中
+    cout << table["*"](2,3) << endl;
+ * function: function是一个模版，其值是一个可调用对象，因为普通的函数指针和lambda并不是同一个类型，lambda是一个类对象，因为为了将函数指针与lambda指定为同种类型，所以用到function模版，比如定义一个function<int(int,int)> f; 可以用一个参数为两个整形返回指针是整形的函数指针或者lambda赋值，f(a,b)也可调用函数
+ *
+    std::vector<std::string> a;
+    a = {"dengyan","yuanlin","huwangfei","chenhui"};
+    std::sort(a.begin(),a.end(),std::greater<std::string>());
+    std::ostream_iterator<std::string> out(cout," ");
+    std::copy(a.begin(),a.end(),out);
+ * 标准库函数对象: 都是以模版定义，所以用 类名<type> 生成对象，算数类:(plus,minus,multiplies,divides,modulus,negate) 关系类:(equal_to,not_equal_to,greater,greater_equal,less,less_equal) 逻辑类:(logical_and,logical_or,logical_not)
+ * 函数对象类: 重载了函数调用运算符的类(operator()(arguments))，lambda本质是由一个未命名函数对象类生成的一个函数对象
+ * 成员访问运算符: 见c++primer P505
+ * 自增与自减运算符: 分为前置运算符和后置运算符，区别在于后置运算符的参数列表多一个int形参，前置运算符返回的是一个引用，而后置返回的是一个右值
+ * 关系运算符: 根据实际情况进行重载
+ * 相等运算符：相等运算符和不相等运算符中的一个应该把工作委托给另一个，意味着其中一个运算符应该负责实际比较对象的工作，而另一个则只是调用那个真正工作的运算符
+ * 算数和关系运算符: 通常定义成非成员函数以允许对左侧或右侧的运算对象进行转换，由于不需要对运算符祥进行改变，所以形参都是常量的引用，如果类同时定义了算数运算符和相关的复合赋值运算符，通常用复合赋值运算符来实现算数运算符
+ * 输入输出运算符: 必须是非成员函数，因为如果是成员函数，其左侧对象会默认绑定到this对象，而输入输出运算符通常在运算符左侧，因此不能定义成成员函数，因为输入输出运算符通常需要访问私有成员，所以需要被声明为友元
+ * 运算符重载的规则: 赋值(=)，下标([])，调用( () )，和成员访问箭头(->)必须是成员函数，复合赋值运算符一般来说应该是成员(非必须)，改变对象状态的运算符与给定类型密切相关(递增(++)，递减(--)，解引用(*))通常来说应该是成员，具有对称性的运算符(算数，相等性，关系，位运算符等)通常是非成员函数
+ * 重载和引用函数: 成员函数也可以通过引用运算符进行重载，当一个同名字和同参数版本的成员函数加上引用运算符后，对应的其他的重载版本(这里是说对this用const和&重载的版本c  )也必须都要添加引用运算符，当调用成员函数时，成员函数也会根据调用对象是左值还是右值选择不同的重载函数
+ * 引用限定符号: 由于c++旧标准的原因，可以对某些右值赋值，比如可以对两个string的和赋值，通过在参数列表后加一个&，表示this对象是一个左值，通过在参数列表后加一个&&，表示this对象是一个右值，并且不能对此返回值赋值，如果const和&连用，&需要写在const后面，两者属于与关系
+ * 右值引用和成员函数: 除了构造函数和赋值运算符外，成员函数也可以同时拥有拷贝和移动版本，比如拷贝版本的参数类型是const & T，而移动版本的参类型则是T &&
+ * 移动迭代器: make_move_iterator(iter) 将一个普通迭代器转换为移动迭代器，对移动迭代器解引用将返回一个右值引用
+ * 合成的移动操作: 如果一个类定义了自己的拷贝构造函数，拷贝赋值运算符或者析构函数，那么编译器就不会为它合成移动构造函数和移动赋值运算符，因此如果一个类如果没有移动操作，那么通常会使用对应的拷贝操作来代替，只有当类的每个非static数据成员都可以移动时，编译器才会为它合成移动构造函数或移动赋值运算符，如果类定义了移动构造函数或移动赋值运算符，则该类的合成拷贝构造函数和拷贝赋值运算符会被定义为删除的
+ * 移后源对象必须可析构，由于是移动操作，因此需要保证被移动的对象在后面不会被使用
+ * noexcept: 通过在参数列表和初始化列表当中写入关键字except来告知编译器此构造函数不会抛出异常，不抛出异常的移动构造函数必须使用，此关键字在声明和定义处都要指定
+ * 移动赋值运算符: Foo &operator=(Foo &&) noexcept
+ * 移动构造函数: Foo(Foo &&) noexcept 切记参数不是常量引用，因为很可能移动后还要对其数据进行更改
+ * 将一个左值当作右值引用: int &&i = std::move(r) r是一个左值
+ * 右值引用: int &&i = 5，用于引用右值，不能引用左值，左值是持久的，而右值是临时的
+ * 赋值运算符: 大多数赋值运算符组合了析构函数和拷贝构造函数的工作，如果类内成员有动态分配内存的形式，那么有一点需要注意的是自赋值，不能先释放掉自己指向的内存然后分配并赋值，需要先拷贝一份数据，然后释放掉自身
+ * private拷贝控制: 通过将对于的拷贝函数声明成private，也可达到删除的效果
+ * 对于具有引用成员或无法默认构造的const成员的类，编译器不会为其合成默认的拷贝构造函数和拷贝赋值运算符
+ * 一个成员有删除的或不可访问的析构函数会导致合成的默认和拷贝构造被定义为删除的
+ * 如果一个类有数据成员不能默认构造，拷贝，赋值或摧毁，则对应的成员函数将被定义为删除的
+ * 阻止拷贝: 使用=delete定义删除的函数，NoCopy(const NoCopy &) = delete 阻止拷贝，=delete必须出现在函数第一次声明的时刻，对于析构函数被删除的类型，不能定义该类型的变量(可以new，但不能用delete删除)或释放该类型动态分配内存的指针
+ * =default使用合成的(拷贝)构造函数
+ * 需要拷贝操作的类也需要赋值操作，反之亦然
+ * 需要析构函数的类也需要拷贝和赋值操作，因为如果一个类需要析构函数，那么析构函数中很存在对内存释放的操作，如果使用默认的拷贝和赋值操作，那么会导致拷贝时只有指针值被拷贝
+ * 三/五法则:
+ * 合成析构函数: 
+ * 析构函数: ~Foo() 析构函数名字由~接类名构成，它没有返回值，也不接受参数，由于其不接受参数，所以不能被重载，对于一个给定类，只会有一个析构函数
+ * 合成拷贝赋值运算符: 与合成拷贝构造函数类似
+ * 拷贝赋值运算符: Foo &operator=(const Foo &) 重构=运算符
+ * 合成拷贝构造函数: 即使定义了其他的拷贝构造函数，也会存在一个合成的拷贝构造函数，他的内部实现是当使用拷贝初始化时，将类中的元素逐个拷贝，如果元素是类类型，那么会调用该类的拷贝构造函数
+ * 拷贝构造函数: Foo(Foo &) 如果一个构造函数的第一个参数是自身类类型的引用，且任何额外参数都有默认值，则此构造函数是拷贝构造函数，通常在以下情况会使用拷贝初始化: 使用=定义变量(这里是定义变量，比如int a = b;而不是int a;a = b)，将一个对象传递给一个非引用类型的形参，从一个返回类型为非引用类型的函数返回一个对象，用花括号列表初始化一个数组元素中的元素或一个聚合类中的成员，以及容器的insert或push成员
+ *
+ * uninitialized_fill_n(b,n,t) 将迭代器b开始的n个元素的值全部赋值为t，返回最后一个构造的元素之后的位置
+ * uninitialized_fill(b,e,t) 将b,e迭代器指定的输入范围的值全部赋值为t，返回最后一个构造的元素之后的位置
+ * 与copy的区别，uninitialized_copy是构造元素，而copy是用=运算符，如果区间是未初始化的，应该用uninitialized_copy，否则用copy
+ * uninitialized_copy_n(b,n,b2) 将迭代器b开始的的n个元素拷贝到迭代器b2开始的内存中，返回最后一个构造的元素之后的位置
+ * uninitialized_copy(b,e,b2) 将b,e迭代器指定的输入范围的数据拷贝到迭代器b2开始的内存中，返回最后一个构造的元素之后的位置
+ * 拷贝和填充未初始化内存的方法:
+ * a.destroy(p) 调用p指向对象的析构函数
+ * a.construct(p,args) p必须是一个类型为T *的指针，args被传递给类型为T的构造函数，用来在p指向的内存中构造一个对象，p可以为malloc返回的指针
+ * a.deallocate(p,n) 将从p开始的n个类型为T的内存释放，p必须为a.allocate(n)的返回值，n为参数n，在调用此函数之前，必须对p中的那个元素调用destroy
+ * a.allocate(n) 分配一段原始的，未构造的内存，保存n个类型为T的对象，类似于malloc函数
+ * allocator<T> a 定义一个名为a的allocator对象，它可以为类型为T的对象分配内存
+ * allocator是一个模版对象，所以在创建时需要指定类型
+ * allocator类: 由于调用new时，会先将内存分配，然后进行对象构造，这样如果有一部分对象不需要被使用，那么在构造时造成了一部分不必要的开销，对于那些确定要使用的对象，我们也在初始化后又进行了一次赋值，那么便进行了两次赋值
+ *
+   shared_ptr<int> up(new int[5]{1,2,3,4,5},[](int * p) { delete [] p; });
+   for (int i = 0; i < 5; ++i) {
+       cout << *(up.get()+i) << endl;
+   }
+ * shared_ptr不直接支持管理动态数组，如果想用shared_ptr关联动态数组，则需要自己定义一个删除器 shared_ptr<int> p(new int[10],[](int * p) { delete [] p; })，也不可直接使用下标访问，需要使用内置get()获取指针然后使用下标访问
+ * unique_ptr<int[]> up(new int[10]) 由于分配的是一个数组类型，可以使用下标运算符
+ * 智能指针与动态数组:
+ * delete  使用delete释放动态数组 delete [] p
+ * new 使用new分配动态数组，int * p = new int[size]()，并将所有值初始化为0，new int[size]{1,2,3,...} 列表初始化
+ * 动态数组:
+ *
+ * w.lock() 如果w.expired返回true，则返回一个空指针，否则返回一个指向w对象的shared_ptr
+ * w.expired() 如果w.use_count返回0，则返回true，否则返回false
+ * w.use_count() 返回与w共享对象的shared_ptr的数量
+ * w.reset() 将w置为空
+ * w = p p可以是一个shared_ptr或者weak_ptr
+ * weak_ptr<value_type> w(p) 与shared_ptr<value_type> w指向相同的对象
+ * weak_ptr<value_type> w 创建一个空智能指针，可以指向类型为value_type的对象
+ * weak_ptr类: weak_ptr通常指向和shared_ptr指向的同样对象，但他不会改变shared_ptr的引用计数
  *
  * u.reset(q) 使u指向q所指向的对象
  * u.reset() 释放u所指向的对象
- * u.release() u放弃对指针的控制权，不会释放u所指向的对象，返回指针
+ * u.release() u放弃对指针的控制权，不会释放u所指向的对象，返回指针，即如果此时单纯调用release，对象也会被释放，但如果将返回值赋值给另一个指针，则不会被释放
  * u = nullptr 释放u指向的对象
  * unique_ptr<value_type,d> u(p,d) 创建一个指针指向p，使用类型为d的对象p代替delete释放内存
  * unique_ptr<value_type,d> u 创建一个空指针，使用d代替delete释放内存
@@ -225,9 +331,13 @@ int main() {//6.4.1
  * unordered_set 用哈希函数组织的set
  * unordered_map 用哈希函数组织的map
  * 无序集合:
+ * multiset<key_type> p
  * multiset 关键字可重复出现的set
+ * multimap<key_type,value_type> p
  * multimap 关键字可重复出现的map
+ * set<key_type> p
  * set 关键字即值，即只保存关键字的容器，容器的成员函数find(val)返回指向val的迭代器，如没有val元素，则返回尾后迭代器
+ * map<key_type,value_type> p
  * map 关联数组，保存关键字-值对，可通过在下标中使用关键字得到返回值，map中每个元素的成员函数有first()和second()，分别返回关键字和值，
  * 按关键字有序保存元素(使用比较运算符):
  * 关联容器: 关联容器支持高效的关键字查找和访问，两个主要的关联容器类型是map和set
@@ -274,6 +384,11 @@ int main() {//6.4.1
  * ostream_iterator<string> out_iter(out); out_iter = "dy"; 向out流里写入dy字符串
  * ostream_iterator<value_type> 向一个输出流写数据，是一种输出迭代器，有单参数和可选的双参数版本，第二个参数接受一个C风格字符串，在输出每个元素后都会打印此字符串
  *
+ *  输出文件内容
+ *  ostream_iterator<string> out(cout," ");
+ *  ifstream infile("/Users/dengyan/chenhui");
+ *  istream_iterator<string> in(infile),eof;
+ *  copy(in,eof,out);
  * 当in_iter与eof指向同一个地方后，可以看作in_iter已报废，需要重新生成后使用
  * istream_iterator允许使用懒惰求值: 当我们将istream_iterator绑定到一个流时，标准库并不保证迭代器立即从流中读取数据，具体实现可以推迟从流中读取数据，直到真正使用迭代器时才真正读取
  * 与一般的迭代器有相同的操作，*in_iter，in_iter++,++in_iter等等，可看作读取后是生成了某个容器保存这些数据
@@ -323,14 +438,14 @@ int main() {//6.4.1
  * 排列算法:
  *
  * replace(start,end,val,rpval) 将start和end迭代器范围内值为val的元素替换为rpval
- * cope(start1,end1,start2) 将start1和end1迭代器范围内的元素拷贝给从start2迭代器开始的元素
+ * copy(start1,end1,start2) 将start1和end1迭代器范围内的元素拷贝给从start2迭代器开始的元素
  * 拷贝算法: 向目的位置迭代器指向的输出序列中的元素写入数据的算法，接受三个参数，前两个表示一个输入范围，第三个表示目的序列的起始位置，需要保证目的序列的size大于输入范围的元素个数
  *
  *
  * transform(start1,end1,start2,predicate) 当start1等于start2时，对迭代器start1和end1的每个元素调用predicate(单参)，并将元素原本值替换为函数的返回值
  * back_inserter(vec) 返回一个指向容器的插入迭代器，当对此迭代器解引用赋值时，实际上就是在调用push_back进行插入，因此可以作为fill_n的第一个参数，即使该容器的size小于n
- * fill_n(start,n,vak) 向start开始的n个元素中写入val
- * fill(start,end,val) 将start和end迭代器所指定范围内的元素全部变为va;
+ * fill_n(start,n,val) 向start开始的n个元素中写入val
+ * fill(start,end,val) 将start和end迭代器所指定范围内的元素全部变为val
  * 写算法: 需要注意的是算法并不会改变容器的大小，如果需要对容器内进行写操作，需要保证容器大于写入的内容，这里的容器大小指的是size而不是capacity
  *
  *
@@ -529,7 +644,7 @@ int main() {//6.4.1
  * IO类:头文件iostream:istream,wistream从流中读取数据，ostream,wostream向流中写入数据，iostream，wiostream读写流；头文件fstream:ifstream,wifstream向文件读取数据，ofstream,wofstream向文件写入数据，fstream，wfstream读写文件；istringstream,wstringstream从string中读取数据，ostringstream，wostringstream向string中写入数据，stringstream，wstringstream读写string
  * IO类型间的关系:ifstream istringstream都继承istream类，则在使用isteam类的地方可以使用ifsteam和istringstream
  * 静态成员的使用场合:静态数据成员类型可以是不完全类型，比如它可以是它所属的类类型，或者是将其作为默认实参
- * 类的静态成员:在成员的声明前面添加static即可，静态成员只与类有关，与类所生成的对象无关，可在函数内部声明，外部定义，外部定义时不能添加static，因为内部已经有static声明了，static不能和const共存，静态成员函数也类似，它们没有this指针，因此静态成员函数不能使用类中的成员，可以使用静态成员
+ * 类的静态成员:在成员的声明前面添加static即可，静态成员只与类有关，与类所生成的对象无关，可在函数内部声明，外部定义，外部定义时不能添加static，因为内部已经有static声明了，static不能和const共存，可只用用类名作用域使用静态成员，静态成员函数也类似，它们没有this指针，因此静态成员函数不能使用类中的成员，可以使用静态成员
  * 对explicit的构造函数进行强制调用:使用static_cast将构造函数里的参数类型转换成类类型即可
  * 抑制构造类型的隐式转换:在构造函数前增加关键字explicit，只能在类内部使用，外部定义的构造函数不可用,关键字explicit只对一个实参的构造函数生效，因为需要多个参数的构造函数不能用于隐式转换
  * 隐式的类类型转换:对于只有一个的构造函数构造函数来说，在需要使用类类型的地方，可以使用构造参数的类型来代替，包括值初始化处，如Sales_data &combine (const Sales_data&) 是一个成员函数，参数为类类型，此时可以用单参数构造函数里的参数类型，编译器会将这个参数通过调用构造函数转换成一个类类型，编译器只运行一步类类型转换，即如果构造函数参数是string，此时使用字符串常量作为conbine参数会失败，因为需要先将字符串常量转换成string，再由string转换成类类型

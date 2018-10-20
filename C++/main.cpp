@@ -1,28 +1,30 @@
 # include <iostream>
 # include <string>
 # include <memory>
-# include <vector>
-# include <list>
-# include <algorithm>
-# include <numeric>
 # include <iomanip>
 # include "Sales_item.h"
 # include <unistd.h>
 # include <sstream>
 # include <fstream>
-# include <array>
+# include <functional>
+# include <vector>
+# include <list>
+# include <deque>
 # include <forward_list>
+# include <algorithm>
+# include <numeric>
+# include <array>
 # include <stack>
 # include <queue>
-# include <functional>
-# include <map>
-# include <unordered_map>
 # include <set>
+# include <map>
 # include <unordered_set>
+# include <unordered_map>
 # include <utility>
 # include <functional>
 # include <new>
 # include <type_traits>
+#include <random>
 
 using std::cin;
 using std::cout;
@@ -90,21 +92,210 @@ public:
     ~A() {
         cout << "xigou" << endl;
     }
-
+    void print(int i)
+    {
+        cout << i << endl;
+    }
 private:
     int a;
 };
 
+struct CPoint
+{
+    int x;
+    int y;
+};
+
+std::ostream &operator<<(std::ostream& os,const CPoint &i)
+{
+    os << "x = " << i.x << " y = " << i.y << " ";
+    return os;
+}
+
+struct CPointCompare {
+    int operator()(CPoint lhs,CPoint rhs) const
+    {
+        if(lhs.x < rhs.x)
+            return 1;
+        else if(lhs.x == rhs.x) {
+            if (lhs.y < rhs.y)
+                return 1;
+        }
+        return 0;
+    }
+};
+
+struct even_by_two {
+public:
+    int operator()() const
+    {
+        return _x += 2;
+    }
+
+private:
+    static int _x;
+};
+
+int even_by_two::_x = 0;
+
+std::ostream_iterator<int> out(cout, " ");
+
+int mergesort(std::vector<int>::iterator begin,std::vector<int>::iterator end)//归并排序，输入参数范围为[ ) 格式
+{
+    //typedef typename T::value_type value_type;
+    auto begin1 = begin;
+    auto middle = begin + (end - begin)/2;
+    auto begin2 = middle;
+    if(middle - begin1 >= 2)
+        mergesort(begin,middle);
+    if(end - middle >= 2)
+        mergesort(middle,end);
+    std::vector<int> a;
+    int i = 0;
+    while(begin1 != middle && begin2 != end)
+    {
+        if(*begin1 < *begin2)
+            a.push_back(*begin1++);
+        else
+            a.push_back(*begin2++);
+    }
+    while(begin1!=middle)
+        a.push_back(*begin1++);
+    while(begin2!=end)
+        a.push_back(*begin2++);
+    std::copy(a.begin(),a.end(),begin);
+//  std::copy(a.begin(),a.end(),out);
+//  cout << endl;
+}
+
+int quicksort(std::vector<int> &x,int base,int end)//快速排序，输入参数范围为[ ] 格式
+{
+    int i = base;
+    int j = base + 1;
+    int value = x[base];
+    int t;
+    while(j<=end)
+    {
+        if(value > x[j])
+        {
+            i++;
+            t = x[i];
+            x[i] = x[j];
+            x[j] = t;
+        }
+        j++;
+    }
+    t = x[i];
+    x[i] = x[base];
+    x[base] = t;
+    //std::copy(x.begin(),x.end(),out);
+    //cout << "  " << base << " " <<  i << " " << end << endl;
+    if(base<i-1)
+        quicksort(x,base,i-1);
+    if(i+1<end)
+        quicksort(x,i+1,end);
+}
+
+std::vector<int> a(10);
+
+
+int randomized_select(std::vector<int>::iterator begin,std::vector<int>::iterator end,int k)
+{
+    auto i = begin;
+    auto j = begin + 1;
+    int t;
+    int indexvalue = *begin;
+    while(j!=end)
+    {
+        if(*j < indexvalue)
+        {
+            i++;
+            t = *j;
+            *j = *i;
+            *i = t;
+        }
+        j++;
+    }
+    t = *i;
+    *i = indexvalue;
+    *begin = t;
+    if(i - begin + 1 == k) //i是否是第k小的值
+        return *i;
+    else if(i - begin + 1 > k)
+        return randomized_select(begin,i,k);
+    else
+        return randomized_select(i + 1, end, k - (i + 1 - begin));
+}
+
+template <class T>
+typename std::iterator_traits<T>::value_type
+fanhui(T x)
+{
+    typedef typename std::iterator_traits<T>::value_type value_type;
+    value_type w = *x;
+    return w;
+}
+
 
 
 int main() {//16.1.5
-    std::ostream_iterator<int> out(cout," ");
+    //std::random_device rd;
+    //std::mt19937 g(rd());
+    //std::ostream_iterator<int> out(cout, " ");
     //std::istream_iterator<int> in(cin),eof;
     //std::copy(in,eof,a.begin());
     //std::copy(a.begin(),a.end(),out);
     //cout << a[3] << endl;
+    //std::iota(a.begin(),a.end(),1);
+    //std::shuffle(a.begin(),a.end(),g);
 
+    std::string s = "aaa";
+    std::string p = "a*a";
+    char tmp;
+    auto bs = s.begin();
+    auto bp = p.begin();
+    if(*bp == '*')
+        return 0;
+    while(bp != p.end())
+    {
+        if(*bp != '*')
+        {
+            tmp = *bp;
+            if(tmp == '.')
+                bs++;
+            else if(tmp == *bs)
+                bs++;
+            else if(bp != p.end() && *(++bp) == '*')
+                ;
+            else
+                return 0;
+        }
+        else if(tmp == '.')
+        {
+            if(bp == p.end() - 1)
+                return 1;
+            else
+                return 0;
+        }
+        else
+            while(*bs == tmp)
+            {
+                bs++;
+                if(bs == s.end() && bp + 1 != p.end())
+                    
+            }
+        bp++;
+        if(bs > s.end())
+            return 0;
+    }
+    if(bs == s.end())
+        cout << "ok" << endl;
+        //return 0;
+    else
+        cout << "no"  << endl;
+        //return -1;
 }
+
 
 //std::for_each(b,b+5,[&](A & p) { new (&p) A(); });
 
@@ -191,7 +382,7 @@ int main() {//16.1.5
  * 需要拷贝操作的类也需要赋值操作，反之亦然
  * 需要析构函数的类也需要拷贝和赋值操作，因为如果一个类需要析构函数，那么析构函数中很存在对内存释放的操作，如果使用默认的拷贝和赋值操作，那么会导致拷贝时只有指针值被拷贝
  * 三/五法则:
- * 合成析构函数: 
+ * 合成析构函数:
  * 析构函数: ~Foo() 析构函数名字由~接类名构成，它没有返回值，也不接受参数，由于其不接受参数，所以不能被重载，对于一个给定类，只会有一个析构函数
  * 合成拷贝赋值运算符: 与合成拷贝构造函数类似
  * 拷贝赋值运算符: Foo &operator=(const Foo &) 重构=运算符

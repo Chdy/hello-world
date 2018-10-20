@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Linux.dir/test.c.o"
+  "CMakeFiles/Linux.dir/socketpair_msgget_server.c.o"
   "Linux.pdb"
   "Linux"
 )

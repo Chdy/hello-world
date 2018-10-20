@@ -39,11 +39,13 @@
 # include <sys/types.h>
 # include <sys/msg.h>
 # include <sys/mman.h>
-# include <sys/socket.h>
+# include <sys/socket.h> //套接字API
 # include <sys/un.h>
-# include <arpa/inet.h>
-# include <netdb.h>
+# include <arpa/inet.h> //大小端字节序转换
+# include <netdb.h> //用于访问dns
+# include <sys/select.h>
 # include <poll.h>
+# include <aio.h> //posix 异步io
 
 char * itoa(int s)
 {

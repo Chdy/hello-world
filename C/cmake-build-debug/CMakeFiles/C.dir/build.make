@@ -57,38 +57,38 @@ include CMakeFiles/C.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/C.dir/flags.make
 
-CMakeFiles/C.dir/zsb.c.o: CMakeFiles/C.dir/flags.make
-CMakeFiles/C.dir/zsb.c.o: ../zsb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dengyan/ClionProjects/C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/C.dir/zsb.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/C.dir/zsb.c.o   -c /Users/dengyan/ClionProjects/C/zsb.c
+CMakeFiles/C.dir/lianbiao.c.o: CMakeFiles/C.dir/flags.make
+CMakeFiles/C.dir/lianbiao.c.o: ../lianbiao.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dengyan/ClionProjects/C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/C.dir/lianbiao.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/C.dir/lianbiao.c.o   -c /Users/dengyan/ClionProjects/C/lianbiao.c
 
-CMakeFiles/C.dir/zsb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/C.dir/zsb.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dengyan/ClionProjects/C/zsb.c > CMakeFiles/C.dir/zsb.c.i
+CMakeFiles/C.dir/lianbiao.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/C.dir/lianbiao.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dengyan/ClionProjects/C/lianbiao.c > CMakeFiles/C.dir/lianbiao.c.i
 
-CMakeFiles/C.dir/zsb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/C.dir/zsb.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dengyan/ClionProjects/C/zsb.c -o CMakeFiles/C.dir/zsb.c.s
+CMakeFiles/C.dir/lianbiao.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/C.dir/lianbiao.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dengyan/ClionProjects/C/lianbiao.c -o CMakeFiles/C.dir/lianbiao.c.s
 
-CMakeFiles/C.dir/zsb.c.o.requires:
+CMakeFiles/C.dir/lianbiao.c.o.requires:
 
-.PHONY : CMakeFiles/C.dir/zsb.c.o.requires
+.PHONY : CMakeFiles/C.dir/lianbiao.c.o.requires
 
-CMakeFiles/C.dir/zsb.c.o.provides: CMakeFiles/C.dir/zsb.c.o.requires
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/zsb.c.o.provides.build
-.PHONY : CMakeFiles/C.dir/zsb.c.o.provides
+CMakeFiles/C.dir/lianbiao.c.o.provides: CMakeFiles/C.dir/lianbiao.c.o.requires
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/lianbiao.c.o.provides.build
+.PHONY : CMakeFiles/C.dir/lianbiao.c.o.provides
 
-CMakeFiles/C.dir/zsb.c.o.provides.build: CMakeFiles/C.dir/zsb.c.o
+CMakeFiles/C.dir/lianbiao.c.o.provides.build: CMakeFiles/C.dir/lianbiao.c.o
 
 
 # Object files for target C
 C_OBJECTS = \
-"CMakeFiles/C.dir/zsb.c.o"
+"CMakeFiles/C.dir/lianbiao.c.o"
 
 # External object files for target C
 C_EXTERNAL_OBJECTS =
 
-C : CMakeFiles/C.dir/zsb.c.o
+C : CMakeFiles/C.dir/lianbiao.c.o
 C : CMakeFiles/C.dir/build.make
 C : CMakeFiles/C.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dengyan/ClionProjects/C/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable C"
@@ -99,7 +99,7 @@ CMakeFiles/C.dir/build: C
 
 .PHONY : CMakeFiles/C.dir/build
 
-CMakeFiles/C.dir/requires: CMakeFiles/C.dir/zsb.c.o.requires
+CMakeFiles/C.dir/requires: CMakeFiles/C.dir/lianbiao.c.o.requires
 
 .PHONY : CMakeFiles/C.dir/requires
 

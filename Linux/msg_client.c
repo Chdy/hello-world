@@ -49,6 +49,7 @@ int main(int argc,char ** argv)
     根据本人的实验，msgsnd的第三个参数应该为除了type项之外的其他数据大小之和，此处就应该为strlen(req.filepath)+sizeof(int)+1，1为空白符所占大小
     */
     numBytes = msgrcv(clientId,&res,2048,0,0);
+    res.data[numBytes] = 0;
     if(res.type==RESP_FAILURE)
     {
         printf("%s",res.data);

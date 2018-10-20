@@ -6,12 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/Users/dengyan/ClionProjects/C/zsb.c
+/Users/dengyan/ClionProjects/C/lianbiao.c
 stdio.h
--
-memory.h
--
-math.h
 -
 stdlib.h
 -

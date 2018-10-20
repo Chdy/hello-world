@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/dengyan/ClionProjects/C/zsb.c">
+		<Unit filename="/Users/dengyan/ClionProjects/C/lianbiao.c">
 			<Option target="C"/>
 		</Unit>
 		<Unit filename="/Users/dengyan/ClionProjects/C/CMakeLists.txt">

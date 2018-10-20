@@ -57,38 +57,38 @@ include CMakeFiles/Linux.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Linux.dir/flags.make
 
-CMakeFiles/Linux.dir/test.c.o: CMakeFiles/Linux.dir/flags.make
-CMakeFiles/Linux.dir/test.c.o: ../test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dengyan/ClionProjects/Linux/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Linux.dir/test.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Linux.dir/test.c.o   -c /Users/dengyan/ClionProjects/Linux/test.c
+CMakeFiles/Linux.dir/socketpair_msgget_server.c.o: CMakeFiles/Linux.dir/flags.make
+CMakeFiles/Linux.dir/socketpair_msgget_server.c.o: ../socketpair_msgget_server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dengyan/ClionProjects/Linux/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Linux.dir/socketpair_msgget_server.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Linux.dir/socketpair_msgget_server.c.o   -c /Users/dengyan/ClionProjects/Linux/socketpair_msgget_server.c
 
-CMakeFiles/Linux.dir/test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Linux.dir/test.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dengyan/ClionProjects/Linux/test.c > CMakeFiles/Linux.dir/test.c.i
+CMakeFiles/Linux.dir/socketpair_msgget_server.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Linux.dir/socketpair_msgget_server.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dengyan/ClionProjects/Linux/socketpair_msgget_server.c > CMakeFiles/Linux.dir/socketpair_msgget_server.c.i
 
-CMakeFiles/Linux.dir/test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Linux.dir/test.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dengyan/ClionProjects/Linux/test.c -o CMakeFiles/Linux.dir/test.c.s
+CMakeFiles/Linux.dir/socketpair_msgget_server.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Linux.dir/socketpair_msgget_server.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dengyan/ClionProjects/Linux/socketpair_msgget_server.c -o CMakeFiles/Linux.dir/socketpair_msgget_server.c.s
 
-CMakeFiles/Linux.dir/test.c.o.requires:
+CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.requires:
 
-.PHONY : CMakeFiles/Linux.dir/test.c.o.requires
+.PHONY : CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.requires
 
-CMakeFiles/Linux.dir/test.c.o.provides: CMakeFiles/Linux.dir/test.c.o.requires
-	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/test.c.o.provides.build
-.PHONY : CMakeFiles/Linux.dir/test.c.o.provides
+CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.provides: CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.requires
+	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.provides.build
+.PHONY : CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.provides
 
-CMakeFiles/Linux.dir/test.c.o.provides.build: CMakeFiles/Linux.dir/test.c.o
+CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.provides.build: CMakeFiles/Linux.dir/socketpair_msgget_server.c.o
 
 
 # Object files for target Linux
 Linux_OBJECTS = \
-"CMakeFiles/Linux.dir/test.c.o"
+"CMakeFiles/Linux.dir/socketpair_msgget_server.c.o"
 
 # External object files for target Linux
 Linux_EXTERNAL_OBJECTS =
 
-Linux: CMakeFiles/Linux.dir/test.c.o
+Linux: CMakeFiles/Linux.dir/socketpair_msgget_server.c.o
 Linux: CMakeFiles/Linux.dir/build.make
 Linux: CMakeFiles/Linux.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dengyan/ClionProjects/Linux/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable Linux"
@@ -99,7 +99,7 @@ CMakeFiles/Linux.dir/build: Linux
 
 .PHONY : CMakeFiles/Linux.dir/build
 
-CMakeFiles/Linux.dir/requires: CMakeFiles/Linux.dir/test.c.o.requires
+CMakeFiles/Linux.dir/requires: CMakeFiles/Linux.dir/socketpair_msgget_server.c.o.requires
 
 .PHONY : CMakeFiles/Linux.dir/requires
 

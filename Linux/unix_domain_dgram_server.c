@@ -14,7 +14,7 @@ int main(int argc,char ** argv)
     addr.sun_family = AF_UNIX;
     unlink("/Users/dengyan/sock");
     strcpy(addr.sun_path,"/Users/dengyan/sock");
-    int sockfd = sockfd = socket(AF_UNIX,SOCK_DGRAM,0);
+    int sockfd = socket(AF_UNIX,SOCK_DGRAM,0);
     if((bind(sockfd,(struct sockaddr *)&addr, sizeof(struct sockaddr_un))) == -1)
         exit(-1);
     for(;;)

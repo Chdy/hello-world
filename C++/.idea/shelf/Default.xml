@@ -1,0 +1,9 @@
+<changelist name="Default" date="1537183656620" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Default/shelved.patch" />
+  <option name="DESCRIPTION" value="Default" />
+  <binary>
+    <option name="BEFORE_PATH" value="../Linux/a.out" />
+    <option name="AFTER_PATH" value="../Linux/a.out" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Default/a.out" />
+  </binary>
+</changelist>

@@ -15,7 +15,7 @@ int server_key = 0xaaaaa;
 struct responseMsg
 {
     long type;
-    char data[2040];//经实验，mac上的信号队列的容量是2048个字节，long为八个字节，所以此处使用2040
+    char data[2048];//经实验，mac上的信号队列的容量是2048个字节，long为八个字节
 };
 
 struct requestMsg

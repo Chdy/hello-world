@@ -123,32 +123,32 @@ C/fast:
 	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/build
 .PHONY : C/fast
 
-zsb.o: zsb.c.o
+lianbiao.o: lianbiao.c.o
 
-.PHONY : zsb.o
+.PHONY : lianbiao.o
 
 # target to build an object file
-zsb.c.o:
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/zsb.c.o
-.PHONY : zsb.c.o
+lianbiao.c.o:
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/lianbiao.c.o
+.PHONY : lianbiao.c.o
 
-zsb.i: zsb.c.i
+lianbiao.i: lianbiao.c.i
 
-.PHONY : zsb.i
+.PHONY : lianbiao.i
 
 # target to preprocess a source file
-zsb.c.i:
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/zsb.c.i
-.PHONY : zsb.c.i
+lianbiao.c.i:
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/lianbiao.c.i
+.PHONY : lianbiao.c.i
 
-zsb.s: zsb.c.s
+lianbiao.s: lianbiao.c.s
 
-.PHONY : zsb.s
+.PHONY : lianbiao.s
 
 # target to generate assembly for a file
-zsb.c.s:
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/zsb.c.s
-.PHONY : zsb.c.s
+lianbiao.c.s:
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/lianbiao.c.s
+.PHONY : lianbiao.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... C"
-	@echo "... zsb.o"
-	@echo "... zsb.i"
-	@echo "... zsb.s"
+	@echo "... lianbiao.o"
+	@echo "... lianbiao.i"
+	@echo "... lianbiao.s"
 .PHONY : help
 
 

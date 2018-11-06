@@ -64,7 +64,7 @@ void evaluate_ploy(pNode L,pNode R,pNode * result)
 {
     *result = (pNode)malloc(sizeof(Node));
     pNode head = *result;
-    head->y = INT16_MAX;//去掉这样插入后是无序的
+    head->y = INT16_MAX;//去掉这行插入后是无序的
     pNode tmp;
     pNode RR = R;
     head->next = NULL;
@@ -125,7 +125,6 @@ void init_ploy(pNode * head)
             end->next = tmp;
             end = tmp;
             scanf("%lf",&(tmp->x));
-            getchar();//抛弃空格
             scanf("%d",&(tmp->y));
         }
         else if(c == '$')

@@ -170,7 +170,7 @@ int calculate(int a,int b,int x)
     switch(x)
     {
         case '+':return a+b;
-        case '-':return a-b;
+        case '-':return b-a;
         case '*':return a*b;
     }
     return a/b;

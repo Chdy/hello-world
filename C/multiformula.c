@@ -21,18 +21,19 @@ typedef struct node
 pNode create_list();
 void traverse_list(pNode);
 void add_list(pNode,pNode);
+void print_ploys(pNode head);
 
 int main(void)
 {
     pNode pA = create_list();
     printf("遍历表A：\n");
-    traverse_list(pA);
+    print_ploys(pA);
     pNode pB = create_list();
     printf("遍历表B：\n");
-    traverse_list(pB);
+    print_ploys(pA);
     add_list(pA,pB);
     printf("遍历表C：\n");
-    traverse_list(pA);
+    print_ploys(pA);
     return 0;
 }
 
@@ -99,6 +100,31 @@ void add_list(pNode pA,pNode pB)
     return;
 }
 
+void print_ploys(pNode head)
+{
+    if(head->pNext!=NULL)//对第一个输出特殊处理
+    {
+        head = head->pNext;
+        if(head->xs==0)
+            ;
+        else
+            printf("%d",head->xs);
+        head->zs?printf("x^%d",head->zs):0;
+    }
+    while(head->pNext!=NULL)
+    {
+        head = head->pNext;
+        if(head->xs==0)
+            continue;
+        else if(head->xs > 0)
+            printf("+%d",head->xs);
+        else
+            printf("%d",head->xs);
+        head->zs?printf("x^%d",head->zs):0;
+    }
+    printf("\n");
+}
+
 void traverse_list(pNode pHead)
 {
     int i = 1;
@@ -124,6 +150,7 @@ pNode create_list()
         printf("分配失败！\n");
         exit(-1);
     }
+    pHead->pNext = NULL;
     pNode pTail = pHead;
     printf("请输入你需要的结点个数：\n");
     scanf("%d",&n);
@@ -134,11 +161,14 @@ pNode create_list()
         printf("请输入第%d项的系数：",i);
         scanf("%d",&xs);
         pNew->xs = xs;
-        printf("-------------指数：");
+        printf("------------指数：");
         scanf("%d",&zs);
         pNew->zs = zs;
+        while(pTail && pTail->pNext && pTail->pNext->zs < zs) //找到合适的插入点
+            pTail = pTail->pNext;
+        pNew->pNext = pTail->pNext;
         pTail->pNext = pNew;
-        pTail = pNew;
+        pTail = pHead;
     }
     return pHead;
 }

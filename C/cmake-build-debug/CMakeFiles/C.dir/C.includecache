@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/dengyan/ClionProjects/C/lianbiao.c
+/Users/dengyan/ClionProjects/C/haffman.c
+stdlib.h
+-
 stdio.h
 -
-stdlib.h
+memory.h
 -
 

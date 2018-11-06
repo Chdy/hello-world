@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/dengyan/ClionProjects/Linux/socketpair_msgget_server.c" "/Users/dengyan/ClionProjects/Linux/cmake-build-debug/CMakeFiles/Linux.dir/socketpair_msgget_server.c.o"
+  "/Users/dengyan/ClionProjects/Linux/db.c" "/Users/dengyan/ClionProjects/Linux/cmake-build-debug/CMakeFiles/Linux.dir/db.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

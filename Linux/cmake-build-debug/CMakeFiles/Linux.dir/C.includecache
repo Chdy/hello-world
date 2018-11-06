@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/Users/dengyan/ClionProjects/Linux/apue_db.h
+
+/Users/dengyan/ClionProjects/Linux/db.c
+apue_db.h
+/Users/dengyan/ClionProjects/Linux/apue_db.h
+rwlock.h
+/Users/dengyan/ClionProjects/Linux/rwlock.h
+/Users/dengyan/ClionProjects/Linux/linux.h
+-
+
 /Users/dengyan/ClionProjects/Linux/linux.h
 sys/types.h
 -
@@ -89,8 +99,10 @@ poll.h
 -
 aio.h
 -
+syslog.h
+-
 
-/Users/dengyan/ClionProjects/Linux/socketpair_msgget_server.c
+/Users/dengyan/ClionProjects/Linux/rwlock.h
 /Users/dengyan/ClionProjects/Linux/linux.h
 -
 

@@ -39,10 +39,11 @@ int main(void)
     PSTACK pS;
     init_zhan(pS);
     traverse_zhan(pS);
-    push_zhan(pS,5);
-    push_zhan(pS,6);
     push_zhan(pS,8);
-    push_zhan(pS,9);
+    push_zhan(pS,5);
+    push_zhan(pS,2);
+    push_zhan(pS,6);
+    printf("栈顶元素为:%d\n", top_zhan(pS));
     traverse_zhan(pS);
     if ( delete_zhan(pS,&val) )
     {
@@ -51,6 +52,7 @@ int main(void)
     else
         printf("栈为空！删除失败\n");
     traverse_zhan(pS);
+    printf("清空栈\n");
     clear_zhan(pS);
     if( traverse_zhan(pS) )
         printf("\n");
@@ -82,6 +84,7 @@ void push_zhan(PSTACK pS,int val)
     pNew->data = val;
     pNew->pNext = pS->pTop;
     pS->pTop = pNew;
+    printf("%d 入栈成功\n", val);
     return;
 }
 
@@ -89,14 +92,15 @@ int traverse_zhan(PSTACK pS)
 {
     if( empty_zhan(pS) )
         return 0;
-    
+    printf("遍历:");
     PNODE p;
     p = pS->pTop;
     while(p != pS->pBottom)
     {
-        printf("--%d\n",p->data);
+        printf("%d ",p->data);
         p = p->pNext;
     }
+    printf("\n");
     return 1;
 }
 
@@ -119,6 +123,14 @@ int delete_zhan(PSTACK pS,int * val)
     free(p);
     return 1;
 }
+
+int top_zhan(PSTACK pS)
+{
+    if( empty_zhan(pS) )
+        return 0;
+    return pS->pTop->data;
+}
+
 
 void clear_zhan(PSTACK pS)
 {

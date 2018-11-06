@@ -3,6 +3,7 @@
 //
 // mac是小端机器，实验方法，在int中存入一个较大的数字，如Ox1f2f3f4f，然后定义一个指针指向该整形，将指针强制转换为char *后将后三个字节写为0，再次输出该数字，输出79，说明4f被存入最低地址的内存
 # include </Users/dengyan/ClionProjects/Linux/linux.h>
+# include "unix_socket_api.h"
 # include <GLUT/GLUT.h>
 
 static jmp_buf env;
@@ -14,7 +15,6 @@ void printSigset(FILE * io,const char * prestr,const sigset_t * sigset);
 void printSigmask(FILE * io,const char * msg);
 void printPending(FILE * io,const char * msg);
 int lock_reg(int fd,int cmd,int type,off_t offset,int whence,off_t len);
-
 
 
 #ifdef USE_SIGSETJMP
@@ -101,7 +101,14 @@ void * f1(void * arg)
 
 //--------------------------------------------------------------------------main----------------------------------------------------------------------
 int main(int argc, char *argv[]) {
-
+    setbuf(stdout, NULL);
+    struct msghdr mv;
+    struct sockaddr_un un;
+    char buf[100];
+    int fd = open("/Users/dengyan/exam", O_RDWR);
+    int i = lseek(fd, 0, SEEK_END);
+    write(fd, ".c", 2);
+    printf("%d", i);
     return 0;
 }
 
@@ -153,21 +160,12 @@ void printPending(FILE * io,const char * msg)
     printSigset(io,"\t\t",&sigpend);
 }
 
-int lock_reg(int fd,int cmd,int type,off_t offset,int whence,off_t len)
-{
-    struct flock lock;
-    lock.l_type = type;
-    lock.l_start = offset;
-    lock.l_whence = whence;
-    lock.l_len = len;
-    return 0;
-}
-
 
 /* 学习过的系统调用函数:
+ * ((int)&((struct sockaddr_un *)0)->sun_path) 可用于计算结构体内成员偏移量，等价于offsetof
  * aio系列函数，已跳过
  * fcntl(int fd,F_SETFL,flags|O_ASYNC) 设置信号IO，通过fcntl(fd,F_SETOWN,pid)设置接收SIGIO的进程，不能对终端设备使用
- * poll(pollfd[],int nfds,int timeout) pollfd{int fd,short events,short revents} events = POLLIN|POLLRDNORM|POLLRDBAND||POLLPRI|POLLOUT|POLLWRNORM|POLLWRBAND|POLLERR|POLLHUP|POLLNVAL，nfds指数组元素的个数，timeout为-1时永久等待，为0时测试后立即返回，其余值时为等待timeout毫秒， POLLIN可以不阻塞的读取高优先级数据以外的数据，POLLRDNORM。可以不阻塞的读取普通数据，POLLRDBAND，可以不阻塞的读取优先级数据，可以不阻塞的读取高优先级的数据，POLLOUT，可以不阻塞的写普通数据，POLLWRNORM，同POLLOUT，POLLWRBAND，可以不阻塞的写优先级数据，POLLERR，已出错，POLLHUP，已挂断，POLLNVAL，描述符没有引用一个打开文件
+ * poll(pollfd[],int nfds,int timeout) pollfd{int fd,short events,short revents} events = POLLIN|POLLRDNORM|POLLRDBAND||POLLPRI|POLLOUT|POLLWRNORM|POLLWRBAND，POLLERR|POLLHUP|POLLNVAL这三个值即使不设置在events中，也可能出现在revents ，nfds指数组元素的个数，timeout为-1时永久等待，为0时测试后立即返回，其余值时为等待timeout毫秒， POLLIN可以不阻塞的读取高优先级数据以外的数据，POLLRDNORM。可以不阻塞的读取普通数据，POLLRDBAND，可以不阻塞的读取优先级数据，可以不阻塞的读取高优先级的数据，POLLOUT，可以不阻塞的写普通数据，POLLWRNORM，同POLLOUT，POLLWRBAND，可以不阻塞的写优先级数据，POLLERR，已出错，POLLHUP，已挂断，POLLNVAL，描述符没有引用一个打开文件
  * FD_ZERO(fdset * fdset) 将一个fdset的所有位置为0
  * FD_SET(int fd,fdset * fdset) 将fd加入fdset
  * FD_CLR(int fd,fdset * fdset) 将fd从fdset中移除
@@ -181,10 +179,16 @@ int lock_reg(int fd,int cmd,int type,off_t offset,int whence,off_t len)
  * tcsetattr(fd,option,termios *) option = TCSANOW|TCSADRAIN|TCSAFLUSH 分别为修改立即生效，等处理完终端输出缓冲区的数据后生效，抛弃终端输入缓冲区的数据然后生效
  * tcgetattr(fd,termios *)
  * ioctl(fd,FIONREAD,&cnt) 获取终端输入队列中的未读取字节数
- * recvmsg()
- * sendmsg() 可以传递文件描述符
+ * ----------终端IO----------
+ *
+ * CMSG_DATA(struct cmsghdr * cp)->(unsigned char *) 返回一个指针，指向与cmsghdr相关联的数据，内部实现就是(unsigned char *)cp + sizeof(struct cmsghdr)
+ * CMSG_FIRSTHDR(struct msghdr * mp)->(struct cmsghdr *) 返回一个指针，指向与msghdr结构相关联的第一个cmsghdr结构，若无这样的结构，返回NULL
+ * CMSG_NXTHDR(struct msghdr * mp, struct cmsghdr * cp)->(struct cmsghdr *) 返回一个指针，指向与msghdr结构相关联的下一个cmsghdr结构，若当前的cmsghdr已是追后一个，返回NULL
+ * CMSG_LEN(unsigned int nbytes)->(unsigned int) 返回为nbytes长的数据对象分配的空间大小，内部实现就是sizeof(struct cmsghdr) + nbytes
+ * recvmsg(int sockfd,msghdr * msg,int flag) 可以看作是使用套接字的readv, 接受数据后，msghdr中的msg_flags元素的可能值有MSG_CTRUNC|MSG_EOR|MSG_ERRQUEUE|MSG_OOB|MSG_TRUNC MSG_CTRUNC表示控制数据被截断，MSG_EOR表示接受记录结束符，MSG_ERRQUEUE表示接受错误信息作为辅助数据，MSG_OOB表示接受带外数据，MSG_TRUNC表示一般数据被截断
+ * sendmsg(int sockfd,msghdr * msg,int flag) 可以看作是使用套接字的writev，msghdr{void * msg_name(地址); socklen_t msg_namelen(地址字节数); iovec * msg_iov IO(缓冲数组); int msg_iovlen(数组中的元素个数); void * msg_control(指向控制信息头); socklen_t msg_controllen(控制信息的长度); int msg_flags(接受数据的标志)}，msghdr.control实际上是一个指向cmsghdr的指针，cmsghdr{socklen_t cmsg_len; int cmsg_level; int cmsg_type} 为了发送文件描述符，将cmsg_len设置为cmsghdr结构的长度加一个整形的长度(描述符的长度)，cmsg_level字段设置为SOL_SOCKET，cmsg_type设置为SCM_RIGHTS，用以表明在传送访问权(SCM是套接字级控制信息的缩写)，访问权限仅能通过UNIX域套接字发送，描述符仅随cmsg_type后存储
  * setsockopt(int sockfd,int level,int optname,&optval,len) 如果针对的是通用的套接字，将level指定为SO_SOCKET，optname = SO_REUSEADDR 这里我只写了一个常用用法，地址复用，能让服务器重启时立即再次绑定同一个地址，optval此时可以是一个指向整数的指针，len表示optval指向数据的大小
- * getsockopt(sockfd,level,optname,&optval,&len) level = SOL_SOCKET optname = SO_REUSEADDR
+ * getsockopt(sockfd,level,optname,&optval,&len) level = SOL_SOCKET optname = SO_REUSEADDR 获取套接字属性
  * getpeername(int sockfd,sockaddr * addr,&len) 获取套接字socket对端主机的地址信息并写到addr中，len表示缓冲区的大小，函数返回后len的值会变为向addr写入的字节数
  * getsockname(int sockfd,sockaddr * addr,&len) 获取套接字socket所绑定的地址信息并写到addr中，len表示缓冲区的大小，函数返回后len的值会变为向addr写入的字节数
  * sendfile(fd,sockfd,&offset,len) mac上未成功，且mac上有六个参数
@@ -236,7 +240,7 @@ int lock_reg(int fd,int cmd,int type,off_t offset,int whence,off_t len)
  * htons(short) h代表主机(host)，n代表网络(network)，l代表32位，s代表16位，表示在主机字节序与网络字节序之间进行转换
  * ----------网络序和主机序转换----------
  *
- * socketpair(domain,type,protocal,int [2]) 前三个参数类似socket，第四个参数类似于pipe，生成两个连接着的unix域的socket套接字，domain = AF_UNIX|AF_INET|AF_INET6 虽然结构足够通用，允许socketpair用于其他域，但一般来说操作系统仅对unix域提供支持，type = SOCK_STREAM|SOCK_DGRAM 分别为字节流和报文，unix域的数据报是可靠的，既不会丢失报文也不会传递出错，unix域套接字更像是套接字和管道的结合，一对相互连接的套接字可以起到全双工管道的作用，两端对读和写开放
+ * socketpair(domain,type,protocal,int [2]) 前三个参数类似socket，第四个参数类似于pipe，生成两个连接着的unix域的socket套接字，domain = AF_UNIX|AF_INET|AF_INET6 虽然结构足够通用，允许socketpair用于其他域，但一般来说操作系统仅对unix域提供支持，type = SOCK_STREAM|SOCK_DGRAM 分别为字节流和报文，unix域的数据报是可靠的，既不会丢失报文也不会传递出错，unix域套接字更像是套接字和管道的结合，一对相互连接的套接字可以起到全双工管道的作用，两端对读和写开放，由于创建的套接字没有名字，所以不能在无关进程中使用，如需要不同进程间通讯需要使用socket函数
  * recvfrom(int sockfd,void buf,size_t length,int flags,sockaddr * addr,&addrlen) 带有获取发送者信息功能的recv，将发送者的地址信息写入addr，addrlen表示缓冲区的大小，当函数返回时将len改为向缓冲区写入的字节数
  * sendto(int sockfd,void * buf,size_t length,int flags,sockaddr * addr,addrlen) 可用于发送报文，通过addr指定目标地址，如过sockfd有连接，那么无视addr
  * recv(int sockfd,void * buf,size_t len,int flags) flags = MSG_DONTWAIT|MSG_OOB|MSG_PEEK|MSG_WAITALL MSG_DONTWAIT此次调用不会阻塞，MSG_PEEK获取sockfd缓冲区中数据的一份副本，不会将数据从缓冲区移除，MSG_WAITALL直到等待接受到len个字节后才会返回
@@ -245,11 +249,11 @@ int lock_reg(int fd,int cmd,int type,off_t offset,int whence,off_t len)
  * connect(sockfd,sockaddr *,addrlen) 如果要处理一个面向连接的网络服务(SOCK_STREAM或SOCK_SEQPACKET)，那么在开始交换数据之前，需要在请求服务的进程套接字和提供服务的进程套接字之间建立一个连接，如果sockfd没有绑定到一个地址，connect会给调用者绑定一个默认地址，如果connect失败，在部分系统上套接字会变成未定义的，最好是关闭套接字，新建一个套接字后再进行connect操作，当在一个数据报socket上使用connect后，可以使用read和write操作描述符
  * accept(int sockfd,sockaddr * addr,&addrlen) 获得sockfd监听的连接请求并建立连接，返回一个套接字描述符，此描述符连接到客户端调用connect的进程，并将请求连接端的地址信息写入addr中，len参数为缓冲区的大小，函数返回时，会将len改为向缓冲区写入的字节数，如果不关心对端机器的地址信息，可以将addr和len置为NULL，如果sockfd是非阻塞且当前没有连接请求，accept会退出并返回-1，否则将阻塞直到收到一个连接请求(阻塞模式)
  * listen(int sockfd,int backlog) 将sockfd指定为监听套接字，此后此套接字能接收到连接请求，backlog用于限制发起请求连接的数量，一旦未处理连接等于backlog，系统就会拒绝多余的连接请求
- * bind(int sockfd,sockaddr * addr,int addrlen) sockaddr = sockaddr_un(AF_UNIX)|sockaddr_in(AF_INET)|sockaddr_in6(AF_INET6) addrlen要根据使用的sockaddr来确定，不能使用sizeof(struct sockaddr)，sockaddr{unsigned char sa_len;sa_family_t sa_family; char sa_data[14]} sockaddr_in{unsigned char sin_len; sa_family_t sin_family; in_port_t sin_port; struct in_addr sin_addr; unsigned char sin_zero[8]} struct sin_addr{in_addr_t(无符号32位整形) s_addr}
+ * bind(int sockfd,sockaddr * addr,int addrlen) sockaddr = sockaddr_un(AF_UNIX)|sockaddr_in(AF_INET)|sockaddr_in6(AF_INET6) addrlen要根据使用的sockaddr来确定，不能使用sizeof(struct sockaddr)，sockaddr{unsigned char sa_len;sa_family_t sa_family; char sa_data[14]} sockaddr_un{unsigned char sun_len; sa_family_t sun_family; char sun_path[104](用于创建套接字的文件名，该文件仅用于向客户客户进程告示套接字名字，无法打开，也不能由应用程序进行通讯)}当sun_path指定的文件已存在时，bind会失败，也就是说该文件是一次性的，程序结束时就应该删除该文件，每次bind时都要保证该文件不存在， sockaddr_in{unsigned char sin_len; sa_family_t sin_family; in_port_t sin_port; struct in_addr sin_addr; unsigned char sin_zero[8]} struct sin_addr{in_addr_t(无符号32位整形) s_addr}
  * socket(domain,type,protocal) domain = AF_UNIX|AF_INET|AF_INET6 分别为UNIX域，Ipv4因特网域，Ipv6因特网域 type = SOCK_STREAM|SOCK_DGRAM|SOCK_SEQPACKET|SOCK_RAW 分别为流(TCP),报文(UDP),可靠传输的UDP,IP协议的数据报接口 protocal通常为0，INADDR_LOOPBACK(0x7f000001)为IPV4回环地址，INADDR_ANY(0x0)为IPV4通配地址，均为整形数据，IN6ADDR_LOOPBACK_INIT为IPV6回环地址，IN6ADDR_ANY_INIT为IPV6通配地址，为结构体类型
  * ----------套接字API----------
  *
- * fcntl(fd,cmd,flock *) cmd = F_SETLK|F_SETLKW_F_GETLK 分别为设置锁，非阻塞操作设置锁，检测锁，flock{l_type,l_whence,l_start,l_len,l_pid} l_type = F_RDLCK|F_WRLCK|F_UNLCK 分别为设置读锁(共享锁)，写锁(互斥锁)，解锁，该函数放置锁需要与文件的打开模式相对应，即需要放置两种锁时，文件的打开模式应该为O_RDWR l_start = SEEK_SET|SEEK_CUR|SEEK_END l_whence为偏移量 l_len为长度，,当len为0时，表示锁的范围可以拓展到最大可能偏移量(无论此后追加写入了多少数据)，l_pid当cmd为F_GETLK时有效，返回拥有该锁的进程id，单个进程在某一时刻只能对一个文件区间拥有一把锁。多次加锁会覆盖上个锁
+ * fcntl(fd,cmd,flock *) cmd = F_SETLK|F_SETLKW|F_GETLK 分别为设置锁，非阻塞操作设置锁，检测锁，flock{l_type,l_whence,l_start,l_len,l_pid} l_type = F_RDLCK|F_WRLCK|F_UNLCK 分别为设置读锁(共享锁)，写锁(互斥锁)，解锁，该函数放置锁需要与文件的打开模式相对应，即需要放置两种锁时，文件的打开模式应该为O_RDWR l_start = SEEK_SET|SEEK_CUR|SEEK_END l_whence为偏移量 l_len为长度，,当len为0时，表示锁的范围可以拓展到最大可能偏移量(无论此后追加写入了多少数据)，l_pid当cmd为F_GETLK时有效，返回拥有该锁的进程id，单个进程在某一时刻只能对一个文件区间拥有一把锁。多次加锁会覆盖上个锁
  * flock(fd,flags) flags = LOCK_SH|LOCK_EX|LOCK_UN|LOCK_NB LOCK_SH为设置共享锁，LOCK_EX为设置互斥锁，LOCK_UN为解锁，LOCK_NB为执行非阻塞操作，无论对文件的访问模式是只读，只写或是读写都可以在上面放置共享锁和互斥锁，该函数的操作单位为整个文件，并且flock的锁转换非原子操作，它是先解锁，然后上锁，在解锁和上锁之间可能会有其他进程的上锁请求成功执行，此时该函数会阻塞，并且原本拥有的锁丢失
  * madvise(addr,length,flags) flags = MADV_NORMAL|MADV_RANDOM|MADV_SEQUENTIAL|MADV_WILLNEED|MADV_DONTNEED
  * mincore(addr,length,char vec[]) 无论是产生何种映射，包括私人匿名映射(堆分配)，并不会立即为这些映射分配相应的内存，需要访问相应的虚拟内存产生缺页错误后才会进行分配
@@ -619,7 +623,7 @@ int lock_reg(int fd,int cmd,int type,off_t offset,int whence,off_t len)
  * mkstemp(buf[] = "nameXXXXXX") 不能传递静态分配的参数，程序结束后不会自动删除该文件
  * ftruncate(fd,len) 可用于增大文件大小，然后用memcpy复制mmap的数据
  * truncate(path,len) 如果len大于文件大小，则会形成文件空洞
- * writev(int fd,struct iovec *,int len) 聚集写，向fd写数据，按iovec数组下标从小到大写缓冲区的iov_len个数据到fd中，也就是说如果iovec[0]指向的缓冲区写到fd后，然后写入iovec[1]指向的缓冲区
+ * writev(int fd,struct iovec *,int len) 聚集写，向fd写数据，按iovec数组下标从小到大写缓冲区的iov_len个数据到fd中，也就是说如果iovec[0]指向的缓冲区写到fd后，然后写入iovec[1]指向的缓冲区，如果自己要设置某种信息协议，比如发送的数据以某特定数据开头，特定数据结尾，则此时可以设置三个iovec，分别用于头部数据，中间数据，尾部数据
  * readv(int fd,struct iovec *,int len) iovec{void * iov_base,size_t iov_len} iov_base指向缓冲区，iov_len表示缓冲区大小，iovec * 指向一个数组结构，len表示数组长度，散布读，从fd读取数据，按iovec数组下标从小到大读取数据到数组元素中所指向的缓冲区中，也就是说如果iovec[0]指向的缓冲区装满后，然后存入iovec[1]指向的缓冲区
  * pwrite(fd,buf,len,offset) 从fd的第offset的偏移量处写入buf的前len个字节的数据，不更新当前的文件偏移量，在多线程环境下有很大的作用
  * pread(fd,buf,len,offset) 从fd的第offset的偏移量处读取len个字节的数据到buf，不更新当前的文件偏移量，在多线程环境下有很大的作用
@@ -628,7 +632,7 @@ int lock_reg(int fd,int cmd,int type,off_t offset,int whence,off_t len)
  * lseek(fd,offset,position)
  * write(fd,buf,len) 可以对文件写大量的0，并且会占用空间，而如果是偏移后写数据，中间的空洞不会占据空间(视系统而定，mac占用)，但是如果复制这个文件，复制的空洞部分会被0填充，因为read函数读取空洞部分读出的数据是0，利用文件空洞可以实现多线程下载
  * aio_read(aiocb *)
- * read(fd,buf,len) 文件空洞是可以读的，只不过读到的数据是0，对于一般的文本文件读取，如果文件为空会返回0，而对于一般的慢速设备比如socket，如果当前socket缓冲区内无数据，则会阻塞，如果设置为非阻塞模式，当无数据时，则会返回-1，并且将错误码设置为EAGAIN，如果另一段已经关闭，则返回0
+ * read(fd,buf,len) 文件空洞是可以读的，只不过读到的数据是0，对于一般的文本文件读取，如果文件为空会返回0，而对于一般的慢速设备比如socket，如果当前socket缓冲区内无数据，则会阻塞，如果设置为非阻塞模式，当无数据时，则会返回-1，并且将错误码设置为EAGAIN，如果另一段已经关闭，则返回0，read会读取换行符
  * close(fd) 只是进程文件描述符中对应的记录，并将fd所对应的全局文件打开表表项中的标记减一，当标记为0是文件关闭
  * openat(fd|-1,filename|pathname,flags,mode) fd指向filename的目录，或者等于AT_FDCWD，则fd等同于进程当前工作目录fd
  * open(path,flag,mode) flag = O_RDONLY|O_WRONLY|O_RDWR|O_APPEND|O_CLOEXEC|O_CREAT|O_DIRECTORY|O_EXCL|O_NOCTTY|O_NOFOLLOW|O_NONBLOCK|O_SYNC|O_TRUNC|O_DSYNC|O_FSYNC

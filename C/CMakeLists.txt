@@ -3,5 +3,5 @@ project(C)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES lianbiao.c)
+set(SOURCE_FILES haffman.c)
 add_executable(C ${SOURCE_FILES})

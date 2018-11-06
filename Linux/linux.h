@@ -46,6 +46,7 @@
 # include <sys/select.h>
 # include <poll.h>
 # include <aio.h> //posix 异步io
+# include <syslog.h>
 
 char * itoa(int s)
 {

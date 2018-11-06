@@ -236,9 +236,19 @@ fanhui(T x)
     return w;
 }
 
-
+int isprimer(int i)
+{
+    if (i < 2)
+        return 0;
+    for (int j = 2; j * j <= i; ++j) {
+        if (i % j == 0)
+            return 0;
+    }
+    return 1;
+}
 
 int main() {//16.1.5
+    setbuf(stdout, NULL);
     //std::random_device rd;
     //std::mt19937 g(rd());
     //std::ostream_iterator<int> out(cout, " ");
@@ -249,7 +259,31 @@ int main() {//16.1.5
     //std::iota(a.begin(),a.end(),1);
     //std::shuffle(a.begin(),a.end(),g);
 
-    std::string s = "aaa";
+    int i = 0;
+    int a[100];
+    for (int j = 11; ; ++j) {
+        if (i == 11)
+            break;
+        if (isprimer(j))
+        {
+            cout << j << endl;
+            int k = j;
+            while (k%10) {
+                if (isprimer(k) == 0)
+                    break;
+                k/=10;
+            }
+            if (k != 0)
+                continue;
+
+            cout << j << endl;
+            i++;
+        }
+    }
+}
+
+/*
+     std::string s = "aaa";
     std::string p = "a*a";
     char tmp;
     auto bs = s.begin();
@@ -277,13 +311,13 @@ int main() {//16.1.5
             else
                 return 0;
         }
-        else
-            while(*bs == tmp)
-            {
+        else {
+            while (*bs == tmp) {
                 bs++;
-                if(bs == s.end() && bp + 1 != p.end())
-                    
+                if (bs == s.end() && bp + 1 != p.end());
+
             }
+        }
         bp++;
         if(bs > s.end())
             return 0;
@@ -294,7 +328,7 @@ int main() {//16.1.5
     else
         cout << "no"  << endl;
         //return -1;
-}
+ */
 
 
 //std::for_each(b,b+5,[&](A & p) { new (&p) A(); });

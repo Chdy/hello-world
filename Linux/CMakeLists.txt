@@ -3,6 +3,6 @@ project(Linux)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES socketpair_msgget_server.c)
+set(SOURCE_FILES db.c)
 
 add_executable(Linux ${SOURCE_FILES})

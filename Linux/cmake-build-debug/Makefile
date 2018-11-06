@@ -123,32 +123,32 @@ Linux/fast:
 	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/build
 .PHONY : Linux/fast
 
-socketpair_msgget_server.o: socketpair_msgget_server.c.o
+db.o: db.c.o
 
-.PHONY : socketpair_msgget_server.o
+.PHONY : db.o
 
 # target to build an object file
-socketpair_msgget_server.c.o:
-	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/socketpair_msgget_server.c.o
-.PHONY : socketpair_msgget_server.c.o
+db.c.o:
+	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/db.c.o
+.PHONY : db.c.o
 
-socketpair_msgget_server.i: socketpair_msgget_server.c.i
+db.i: db.c.i
 
-.PHONY : socketpair_msgget_server.i
+.PHONY : db.i
 
 # target to preprocess a source file
-socketpair_msgget_server.c.i:
-	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/socketpair_msgget_server.c.i
-.PHONY : socketpair_msgget_server.c.i
+db.c.i:
+	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/db.c.i
+.PHONY : db.c.i
 
-socketpair_msgget_server.s: socketpair_msgget_server.c.s
+db.s: db.c.s
 
-.PHONY : socketpair_msgget_server.s
+.PHONY : db.s
 
 # target to generate assembly for a file
-socketpair_msgget_server.c.s:
-	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/socketpair_msgget_server.c.s
-.PHONY : socketpair_msgget_server.c.s
+db.c.s:
+	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/db.c.s
+.PHONY : db.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Linux"
-	@echo "... socketpair_msgget_server.o"
-	@echo "... socketpair_msgget_server.i"
-	@echo "... socketpair_msgget_server.s"
+	@echo "... db.o"
+	@echo "... db.i"
+	@echo "... db.s"
 .PHONY : help
 
 

@@ -116,7 +116,7 @@ void rb_insert_fixup(pNode T, pNode x) // T是一个管理节点，T->parent指�
 {
     pNode y;
 
-    while (x->parent->color == RED)
+    while (x->parent->color == RED) //如果x的父亲是红节点，此时x的祖节点必为黑色(不然在插入前就不满足条件)
     {
         if (x->parent->parent->left == x->parent) { //如果x的父亲是左孩子
             y = x->parent->parent->right; //y是其叔节点

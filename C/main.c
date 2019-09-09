@@ -21,13 +21,22 @@ char* convert(char* s, int numRows);
 
 int main(void)
 {
-    int fd = open("/dev/tty",O_RDWR);
+    char sex;
+    int id, age;
+    double yw, sx, yy, zh, ty;
+    printf("请输入学号，年龄, 性别，语文成绩，数学成绩，英语成绩，综合成绩，体育成绩\n");
+    scanf("%d %d %c %lf %lf %lf %lf %lf", &id, &age, &sex, &yw, &sx, &yy, &zh, &ty);
+    printf("%d %d %c %lf", id, age, sex, (yw+sx+yy+zh+ty)/5);
+    return 0;
+}
+/*
+int fd = open("/dev/tty",O_RDWR);
     if(fd == EOF)
         exit(-1);
    char c;
     read(fd,&c,1);
     printf("%c",c);
-}
+ */
 
 char* convert(char* s, int numRows) {
     int half;

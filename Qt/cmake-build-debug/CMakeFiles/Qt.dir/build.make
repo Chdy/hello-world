@@ -81,28 +81,28 @@ CMakeFiles/Qt.dir/main.cpp.o.provides: CMakeFiles/Qt.dir/main.cpp.o.requires
 CMakeFiles/Qt.dir/main.cpp.o.provides.build: CMakeFiles/Qt.dir/main.cpp.o
 
 
-CMakeFiles/Qt.dir/gotocelldialog.cpp.o: CMakeFiles/Qt.dir/flags.make
-CMakeFiles/Qt.dir/gotocelldialog.cpp.o: ../gotocelldialog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Qt.dir/gotocelldialog.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Qt.dir/gotocelldialog.cpp.o -c /Users/dengyan/ClionProjects/Qt/gotocelldialog.cpp
+CMakeFiles/Qt.dir/mainwindow.cpp.o: CMakeFiles/Qt.dir/flags.make
+CMakeFiles/Qt.dir/mainwindow.cpp.o: ../mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Qt.dir/mainwindow.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Qt.dir/mainwindow.cpp.o -c /Users/dengyan/ClionProjects/Qt/mainwindow.cpp
 
-CMakeFiles/Qt.dir/gotocelldialog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Qt.dir/gotocelldialog.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dengyan/ClionProjects/Qt/gotocelldialog.cpp > CMakeFiles/Qt.dir/gotocelldialog.cpp.i
+CMakeFiles/Qt.dir/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Qt.dir/mainwindow.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dengyan/ClionProjects/Qt/mainwindow.cpp > CMakeFiles/Qt.dir/mainwindow.cpp.i
 
-CMakeFiles/Qt.dir/gotocelldialog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Qt.dir/gotocelldialog.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dengyan/ClionProjects/Qt/gotocelldialog.cpp -o CMakeFiles/Qt.dir/gotocelldialog.cpp.s
+CMakeFiles/Qt.dir/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Qt.dir/mainwindow.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dengyan/ClionProjects/Qt/mainwindow.cpp -o CMakeFiles/Qt.dir/mainwindow.cpp.s
 
-CMakeFiles/Qt.dir/gotocelldialog.cpp.o.requires:
+CMakeFiles/Qt.dir/mainwindow.cpp.o.requires:
 
-.PHONY : CMakeFiles/Qt.dir/gotocelldialog.cpp.o.requires
+.PHONY : CMakeFiles/Qt.dir/mainwindow.cpp.o.requires
 
-CMakeFiles/Qt.dir/gotocelldialog.cpp.o.provides: CMakeFiles/Qt.dir/gotocelldialog.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/gotocelldialog.cpp.o.provides.build
-.PHONY : CMakeFiles/Qt.dir/gotocelldialog.cpp.o.provides
+CMakeFiles/Qt.dir/mainwindow.cpp.o.provides: CMakeFiles/Qt.dir/mainwindow.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/mainwindow.cpp.o.provides.build
+.PHONY : CMakeFiles/Qt.dir/mainwindow.cpp.o.provides
 
-CMakeFiles/Qt.dir/gotocelldialog.cpp.o.provides.build: CMakeFiles/Qt.dir/gotocelldialog.cpp.o
+CMakeFiles/Qt.dir/mainwindow.cpp.o.provides.build: CMakeFiles/Qt.dir/mainwindow.cpp.o
 
 
 CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o: CMakeFiles/Qt.dir/flags.make
@@ -129,24 +129,50 @@ CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o.provides: CMakeFiles/Qt.dir/
 CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o.provides.build: CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o
 
 
+CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o: CMakeFiles/Qt.dir/flags.make
+CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o: Qt_autogen/EWIEGA46WW/qrc_icon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o -c /Users/dengyan/ClionProjects/Qt/cmake-build-debug/Qt_autogen/EWIEGA46WW/qrc_icon.cpp
+
+CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dengyan/ClionProjects/Qt/cmake-build-debug/Qt_autogen/EWIEGA46WW/qrc_icon.cpp > CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.i
+
+CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dengyan/ClionProjects/Qt/cmake-build-debug/Qt_autogen/EWIEGA46WW/qrc_icon.cpp -o CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.s
+
+CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.requires:
+
+.PHONY : CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.requires
+
+CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.provides: CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.provides.build
+.PHONY : CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.provides
+
+CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.provides.build: CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o
+
+
 # Object files for target Qt
 Qt_OBJECTS = \
 "CMakeFiles/Qt.dir/main.cpp.o" \
-"CMakeFiles/Qt.dir/gotocelldialog.cpp.o" \
-"CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o"
+"CMakeFiles/Qt.dir/mainwindow.cpp.o" \
+"CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o"
 
 # External object files for target Qt
 Qt_EXTERNAL_OBJECTS =
 
 Qt: CMakeFiles/Qt.dir/main.cpp.o
-Qt: CMakeFiles/Qt.dir/gotocelldialog.cpp.o
+Qt: CMakeFiles/Qt.dir/mainwindow.cpp.o
 Qt: CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o
+Qt: CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o
 Qt: CMakeFiles/Qt.dir/build.make
 Qt: /Users/dengyan/Qt/5.10.1/clang_64/lib/QtWidgets.framework/QtWidgets
 Qt: /Users/dengyan/Qt/5.10.1/clang_64/lib/QtGui.framework/QtGui
 Qt: /Users/dengyan/Qt/5.10.1/clang_64/lib/QtCore.framework/QtCore
 Qt: CMakeFiles/Qt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Qt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Qt"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Qt.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -155,8 +181,9 @@ CMakeFiles/Qt.dir/build: Qt
 .PHONY : CMakeFiles/Qt.dir/build
 
 CMakeFiles/Qt.dir/requires: CMakeFiles/Qt.dir/main.cpp.o.requires
-CMakeFiles/Qt.dir/requires: CMakeFiles/Qt.dir/gotocelldialog.cpp.o.requires
+CMakeFiles/Qt.dir/requires: CMakeFiles/Qt.dir/mainwindow.cpp.o.requires
 CMakeFiles/Qt.dir/requires: CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o.requires
+CMakeFiles/Qt.dir/requires: CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o.requires
 
 .PHONY : CMakeFiles/Qt.dir/requires
 

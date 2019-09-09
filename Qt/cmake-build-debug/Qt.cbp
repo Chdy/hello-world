@@ -118,19 +118,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/dengyan/ClionProjects/Qt/cmake-build-debug/Qt_autogen/EWIEGA46WW/qrc_icon.cpp">
+			<Option target="Qt"/>
+		</Unit>
 		<Unit filename="/Users/dengyan/ClionProjects/Qt/cmake-build-debug/Qt_autogen/mocs_compilation.cpp">
 			<Option target="Qt"/>
 		</Unit>
-		<Unit filename="/Users/dengyan/ClionProjects/Qt/gotocelldialog.cpp">
-			<Option target="Qt"/>
-		</Unit>
-		<Unit filename="/Users/dengyan/ClionProjects/Qt/gotocelldialog.h">
+		<Unit filename="/Users/dengyan/ClionProjects/Qt/icon.qrc">
 			<Option target="Qt"/>
 		</Unit>
 		<Unit filename="/Users/dengyan/ClionProjects/Qt/main.cpp">
 			<Option target="Qt"/>
 		</Unit>
+		<Unit filename="/Users/dengyan/ClionProjects/Qt/mainwindow.cpp">
+			<Option target="Qt"/>
+		</Unit>
+		<Unit filename="/Users/dengyan/ClionProjects/Qt/mainwindow.h">
+			<Option target="Qt"/>
+		</Unit>
 		<Unit filename="/Users/dengyan/ClionProjects/Qt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/dengyan/ClionProjects/Qt/icon.qrc">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/Users/dengyan/ClionProjects/Qt/../../Qt/5.10.1/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">

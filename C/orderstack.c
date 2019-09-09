@@ -15,25 +15,25 @@
 # define size 100
 # define extend 10
 
-typedef struct steak
+typedef struct stack
 {
     char * pTop;
     char * pBottom;
-    int steaksize;
-}Steak,*pSteak;
+    int stacksize;
+}Stack,*pStack;
 
-void init_steak(pSteak);
-void push_steak(pSteak,char);
-int pop_steak(pSteak,char *);
-int empty_steak(pSteak);
+void init_stack(pStack);
+void push_stack(pStack,char);
+int pop_stack(pStack,char *);
+int empty_stack(pStack);
 
 int main(void)
 {
     char ch[80];
     char val;
     char * p;
-    Steak S;
-    init_steak(&S);
+    Stack S;
+    init_stack(&S);
     printf("请输入带有((),[],{})的表达式：\n");
     gets(ch);
     p = ch;
@@ -43,14 +43,14 @@ int main(void)
         {
             case '(':
             case '[':
-            case '{': push_steak(&S,*p++);
+            case '{': push_stack(&S,*p++);
                 break;
             case ')':
             case ']':
             case '}':
-            if( !empty_steak(&S) )
+            if( !empty_stack(&S) )
             {
-                pop_steak(&S,&val);
+                pop_stack(&S,&val);
                 if( !((val=='('&&*p==')') || (val=='['&&*p==']') || (val=='{'&&*p=='}')) )
                 {
                     printf("左右括号不匹配!\n");
@@ -65,14 +65,14 @@ int main(void)
             default:p++;
         }
     }
-    if( empty_steak(&S) )
+    if( empty_stack(&S) )
         printf("括号匹配！\n");
     else
         printf("缺少右括号！\n");
     return 0;
 }
 
-int empty_steak(pSteak S)
+int empty_stack(pStack S)
 {
     if(S->pTop == S->pBottom)
         return 1;
@@ -80,9 +80,9 @@ int empty_steak(pSteak S)
         return 0;
 }
 
-int pop_steak(pSteak S,char *val)
+int pop_stack(pStack S,char *val)
 {
-    /*if( empty_steak(S) )
+    /*if( empty_stack(S) )
     {
         printf("栈为空！\n");
         exit(-1);
@@ -91,19 +91,19 @@ int pop_steak(pSteak S,char *val)
     return 0;
 }
 
-void push_steak(pSteak S,char val)
+void push_stack(pStack S,char val)
 {
-    if(S->pTop-S->pBottom == S->steaksize)
+    if(S->pTop-S->pBottom == S->stacksize)
     {
-        S->pBottom = (char *)realloc(S->pBottom,(S->steaksize + extend)*sizeof(char));
-        S->steaksize += extend;
+        S->pBottom = (char *)realloc(S->pBottom,(S->stacksize + extend)*sizeof(char));
+        S->stacksize += extend;
     }
     *(S->pTop)++ = val;
 }
 
-void init_steak(pSteak S)
+void init_stack(pStack S)
 {
     S->pBottom = (char *)malloc(sizeof(char)*size);
     S->pTop = S->pBottom;
-    S->steaksize = size;
+    S->stacksize = size;
 }

@@ -33,7 +33,6 @@ void hand(int sig)
 {
     while((sig = waitpid(-1,NULL,WNOHANG))>0)
     {
-        //printf("reap the process %d\n",sig);
         continue;
     }
 }

@@ -47,6 +47,20 @@
 # include <poll.h>
 # include <aio.h> //posix 异步io
 # include <syslog.h>
+# include <sys/event.h>
+# include <sys/sysctl.h>
+# include <sys/param.h>
+
+#include <netinet/in.h>
+#include <netinet/if_ether.h>
+#include <net/if_arp.h>
+#include <net/if.h>
+#include <net/ethernet.h>
+#include <netinet/tcp.h>
+
+#include "error.c"
+
+#define MAXLINE 4096
 
 char * itoa(int s)
 {

@@ -36,6 +36,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.10.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.10.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.10.3/CMakeSystem.cmake"
+  "../icon.qrc"
   "/Users/dengyan/Qt/5.10.1/clang_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake"
   "/Users/dengyan/Qt/5.10.1/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake"
   "/Users/dengyan/Qt/5.10.1/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"

@@ -4,7 +4,7 @@
 // mac是小端机器，实验方法，在int中存入一个较大的数字，如Ox1f2f3f4f，然后定义一个指针指向该整形，将指针强制转换为char *后将后三个字节写为0，再次输出该数字，输出79，说明4f被存入最低地址的内存
 # include </Users/dengyan/ClionProjects/Linux/linux.h>
 # include "unix_socket_api.h"
-# include <GLUT/GLUT.h>
+//# include <GLUT/GLUT.h>
 
 static jmp_buf env;
 
@@ -42,7 +42,7 @@ void sig_handler(int sig)
     sigset_t premask;
     struct sigvec sv;
     printf("Caught SIGTSTP\n");
-    signal(SIGTSTP,SIG_DFL);//将信号处理程序恢复成默认处理
+    signal(SIGTSTP,SIG_DFL);//将信`号处理程序恢复成默认处理
     raise(SIGTSTP);//向自身发送SIGTSTP信号，此处可以发送SIGSTOP信号，下面的内容将不再需要，但是如果父进程需要获取子进程退出信息，将导致收到的退出信息不准确
     sigemptyset(&mask);
     sigaddset(&mask,SIGTSTP);
@@ -99,18 +99,115 @@ void * f1(void * arg)
     }
 }
 
-//--------------------------------------------------------------------------main----------------------------------------------------------------------
+struct {
+    int a:1;
+};
+
+#define SOCK_PATH "/Users/dengyan/"
+
+void alarm_handler(int a)
+{
+    return;
+}
+
+#define	CMGROUP_MAX 16
+
+struct cmsgcred {
+    pid_t	cmcred_pid;		/* PID of sending process */
+    uid_t	cmcred_uid;		/* real UID of sending process */
+    uid_t	cmcred_euid;		/* effective UID of sending process */
+    gid_t	cmcred_gid;		/* real GID of sending process */
+    short	cmcred_ngroups;		/* number or groups */
+    gid_t	cmcred_groups[CMGROUP_MAX];	/* groups */
+};
+
+//Todo:--------------------------------------------------------------------------main----------------------------------------------------------------------
 int main(int argc, char *argv[]) {
-    setbuf(stdout, NULL);
-    struct msghdr mv;
-    struct sockaddr_un un;
-    char buf[100];
-    int fd = open("/Users/dengyan/exam", O_RDWR);
-    int i = lseek(fd, 0, SEEK_END);
-    write(fd, ".c", 2);
-    printf("%d", i);
+    int fd = socket(AF_UNIX, SOCK_STREAM, 0);
+    struct sockaddr_un addr;
+    addr.sun_family = AF_UNIX;
+    strcpy(addr.sun_path, "/Users/dengyan/serve");
+    struct ifconf a;
+    struct ifreq b;
+
+    int p[2];
+    socketpair(AF_UNIX, SOCK_STREAM, 0, p);
+
+    struct cmsgcred cred;
+    struct msghdr msg;
+    struct iovec iov[1];
+    int controllen = CMSG_LEN(sizeof(int));
+    char controlbuf[controllen];
+    printf("%d\n", controllen);
+
+    bzero(&msg, sizeof(msg));
+    msg.msg_name = NULL;
+    msg.msg_namelen = 0;
+    msg.msg_iovlen = 1;
+    msg.msg_iov = iov;
+    msg.msg_control = controlbuf;
+    msg.msg_controllen = controllen;
+    msg.msg_flags = 0;
+
+    struct cmsghdr * cmptr = controlbuf;
+    cmptr->cmsg_level = SOL_SOCKET;
+    cmptr->cmsg_type = SCM_RIGHTS;
+    cmptr->cmsg_len = controllen;
+    *(int *)CMSG_DATA(cmptr) = fd;
+
+    iov[0].iov_base = "1";
+    iov[0].iov_len = 1;
+
+    //if (connect(fd, (struct sockaddr *)&addr, SUN_LEN(&addr)) < 0)
+    //    err_sys("connect error");
+
+    //pause();
+    int n = sendmsg(p[0], &msg, 0);
+    printf("%d, %s", n, strerror(errno));
     return 0;
 }
+//Todo:--------------------------------------------------------------------------main----------------------------------------------------------------------
+
+
+/*
+ *     setbuf(stdout, NULL);
+    struct msghdr mv;
+    struct sockaddr_un un;
+    char buf[1000];
+    int fd[2];
+    int pid;
+    char maze[20][20];
+    socketpair(AF_UNIX, SOCK_DGRAM, 0, fd);
+    if((pid = fork()) == 0) {
+        if (dup2(fd[0],0) != 0) {
+            printf("error %s",strerror(errno)); //0读
+            exit(-1);
+        }
+        close(fd[0]);
+        if (dup2(fd[1],1) != 1) {
+            printf("error %s",strerror(errno)); //1写
+            exit(-1);
+        }
+        close(fd[1]);
+        execlp("/Users/dengyan/PycharmProjects/Py/Maze.py",(char *)(0));
+    } else { //1写 0读
+        int i;
+        int n = 0;
+        while (i = read(fd[0], buf, 100)) {
+            if(!strncmp(buf,"Please enter any key to exit",i))
+                break;
+            memcpy(maze[n++],buf,i - 1);
+        }
+        for (int j = 0; j < 20; ++j) {
+            for (int k = 0; k < 20; ++k) {
+                printf("%c ", maze[j][k]);
+            }
+            printf("\n");
+        }
+        getchar();
+        write(fd[1],"w\n",2);
+    }
+ */
 
 void printWaitStatus(char * msg,int status)
 {
@@ -178,13 +275,13 @@ void printPending(FILE * io,const char * msg)
  * ioctl(fd,TIOCGWINSZ,winsize *)
  * tcsetattr(fd,option,termios *) option = TCSANOW|TCSADRAIN|TCSAFLUSH 分别为修改立即生效，等处理完终端输出缓冲区的数据后生效，抛弃终端输入缓冲区的数据然后生效
  * tcgetattr(fd,termios *)
- * ioctl(fd,FIONREAD,&cnt) 获取终端输入队列中的未读取字节数
+ * ioctl(fd,FIONREAD,&cnt) 获取接收缓冲区中的未读取字节数(套接字，文件，管道，终端)
  * ----------终端IO----------
  *
  * CMSG_DATA(struct cmsghdr * cp)->(unsigned char *) 返回一个指针，指向与cmsghdr相关联的数据，内部实现就是(unsigned char *)cp + sizeof(struct cmsghdr)
  * CMSG_FIRSTHDR(struct msghdr * mp)->(struct cmsghdr *) 返回一个指针，指向与msghdr结构相关联的第一个cmsghdr结构，若无这样的结构，返回NULL
  * CMSG_NXTHDR(struct msghdr * mp, struct cmsghdr * cp)->(struct cmsghdr *) 返回一个指针，指向与msghdr结构相关联的下一个cmsghdr结构，若当前的cmsghdr已是追后一个，返回NULL
- * CMSG_LEN(unsigned int nbytes)->(unsigned int) 返回为nbytes长的数据对象分配的空间大小，内部实现就是sizeof(struct cmsghdr) + nbytes
+ * CMSG_LEN(unsigned int nbytes)->(unsigned int) 返回头部加nbytes的空间大小，内部实现就是sizeof(struct cmsghdr) + nbytes
  * recvmsg(int sockfd,msghdr * msg,int flag) 可以看作是使用套接字的readv, 接受数据后，msghdr中的msg_flags元素的可能值有MSG_CTRUNC|MSG_EOR|MSG_ERRQUEUE|MSG_OOB|MSG_TRUNC MSG_CTRUNC表示控制数据被截断，MSG_EOR表示接受记录结束符，MSG_ERRQUEUE表示接受错误信息作为辅助数据，MSG_OOB表示接受带外数据，MSG_TRUNC表示一般数据被截断
  * sendmsg(int sockfd,msghdr * msg,int flag) 可以看作是使用套接字的writev，msghdr{void * msg_name(地址); socklen_t msg_namelen(地址字节数); iovec * msg_iov IO(缓冲数组); int msg_iovlen(数组中的元素个数); void * msg_control(指向控制信息头); socklen_t msg_controllen(控制信息的长度); int msg_flags(接受数据的标志)}，msghdr.control实际上是一个指向cmsghdr的指针，cmsghdr{socklen_t cmsg_len; int cmsg_level; int cmsg_type} 为了发送文件描述符，将cmsg_len设置为cmsghdr结构的长度加一个整形的长度(描述符的长度)，cmsg_level字段设置为SOL_SOCKET，cmsg_type设置为SCM_RIGHTS，用以表明在传送访问权(SCM是套接字级控制信息的缩写)，访问权限仅能通过UNIX域套接字发送，描述符仅随cmsg_type后存储
  * setsockopt(int sockfd,int level,int optname,&optval,len) 如果针对的是通用的套接字，将level指定为SO_SOCKET，optname = SO_REUSEADDR 这里我只写了一个常用用法，地址复用，能让服务器重启时立即再次绑定同一个地址，optval此时可以是一个指向整数的指针，len表示optval指向数据的大小
@@ -205,8 +302,8 @@ void printPending(FILE * io,const char * msg)
  * endservent() 关闭文件
  * getservent()->(struct servent *) 获取文件下一条目
  * setservent(int stayopen) 打开端口绑定的服务名和端口号信息文件，mac上即/etc/services文件
- * getservbyport(int port,char * proto)->(struct servent *) port表示端口名，proto表示协议名，根据端口名(如23，需要使用网络序)和协议名(tcp)查询信息
- * getservbyname(char * name,char * proto)->(struct servent *) servent(char * s_name; char ** s_aliases; int s_port(网络序); char * s_proto) proto表示服务名，proto表示协议名，根据服务名(如ssh)和协议名(如tcp)查询信息
+ * getservbyport(int port,char * proto)->(struct servent *) port表示端口号，proto表示协议名，根据端口名(如23，需要使用网络序)和协议名(tcp)查询信息
+ * getservbyname(char * name,char * proto)->(struct servent *) servent(char * s_name; char ** s_aliases; int s_port(网络序); char * s_proto) name表示服务名，proto表示协议名，根据服务名(如ssh)和协议名(如tcp)查询信息
  * ----------端口名和端口号信息文件----------
  *
  * endprotoent() 关闭文件
@@ -264,7 +361,7 @@ void printPending(FILE * io,const char * msg)
  * mprotect(addr,length,flags) flags = prot = PROT_NONE|PROT_READ|PROT_WRITE|PROT_EXEC 用于更改保护位，addr必须是系统页长的整数倍
  * msync(addr,length,flags) 将页写回硬盘，flags = MS_SYNC|MS_ASYNC|MS_INVALIDATE 分别为同步更新，异步更新，通知系统丢弃那些与底层存储器没有同步的页
  * munmap(addr,length) 解除映射区，如果是私人映射，那么映射区的数据会被丢弃
- * mmap(addr,length,prot,flags,fd|-1,offset) prot = PROT_NONE|PROT_READ|PROT_WRITE|PROT_EXEC PROT_NONE表示映射区不可访问，PROT_READ表示映射区可读，PROT_READ表示映射区可写，PROT_EXEC表示映射区可执行，如果要写文件，则应该设置PROT_READ|PROT_WRITR并且打开文件时应该指定标记O_RDWR，映射文件时size不能超过文件的大小(可用lseek加write或者ftruncate增加文件大小) flags = MAP_PRIVATE|MAP_SHARED|MAP_ANONYMOUS|MAP_FIXED|MAP_NORESERVE PROT_NONE表示区域无法访问，MAP_PRIVATE表示创建私人映射，会创建一份副本，对数据的改变不会影响源文件，MAP_SHARED表示创建共享映射，存储操作等于对文件调用write，MAP_ANONYMOUS表示创建匿名映射，私人匿名映射类似堆分配(但是没有堆分配时块与块之间的联系)，共享匿名映射就是共享内存分配，MAP_FIXED表示不对addr参数进行处理，否则会将addr参数向上取整为分页大小的倍数，此时会对addr地址强行进行映射，还能覆盖该地址之前的映射
+ * mmap(addr,length,prot,flags,fd|-1,offset) prot = PROT_NONE|PROT_READ|PROT_WRITE|PROT_EXEC PROT_NONE表示映射区不可访问，PROT_READ表示映射区可读，PROT_WRITE表示映射区可写，PROT_EXEC表示映射区可执行，如果要写文件，则应该设置PROT_READ|PROT_WRITR并且打开文件时应该指定标记O_RDWR，映射文件时size不能超过文件的大小(可用lseek加write或者ftruncate增加文件大小) flags = MAP_PRIVATE|MAP_SHARED|MAP_ANONYMOUS|MAP_FIXED|MAP_NORESERVE PROT_NONE表示区域无法访问，MAP_PRIVATE表示创建私人映射，会创建一份副本，对数据的改变不会影响源文件，MAP_SHARED表示创建共享映射，存储操作等于对文件调用write，MAP_ANONYMOUS表示创建匿名映射，私人匿名映射类似堆分配(但是没有堆分配时块与块之间的联系)，共享匿名映射就是共享内存分配，MAP_FIXED表示不对addr参数进行处理，否则会将addr参数向上取整为分页大小的倍数，此时会对addr地址强行进行映射，还能覆盖该地址之前的映射
  * ----------内存映射----------
  *
  * shmctl(shmid,cmd,shmid_ds *) cmd = IPC_RMID|IPC_STAT|IPC_SET  IPC_RMID用于删除此共享内存段，标示符会立即删除，所以不能再用shmat进行该段的连接，但是该内存段不会立即删除，只有当引用此共享内存段的计数变为0后才会真正删除该段，IPC_STAT用于获取此段的属性，IPC_SET为设置，shmid_ds{shm_perm(权限设置) shm_segsz(共享存储的段大小); shm_lpid(最后进行op操作的pid); shm_cpid(创建者的pid?); shm_nattch(当前共享此区域的进程数量); shm_atime(最后一次访问的时间); shm_dtime(最后一次分离此内存段的时间); shm_ctime(最后一次改变的时间)}
@@ -293,7 +390,7 @@ void printPending(FILE * io,const char * msg)
  * pipe(int [2]) 如果某管道的写入端未关闭，且当前管道内无数据，此时进行读取会阻塞；即管道的写入端如果已关闭，此时进行读取且管道内无数据会直接返回0，如果写一个读端已经关闭的管道，则产生信号SIGPIPE，如果选择忽略此信号，则write函数返回-1，并且设置errno为EPIPE，fork会复制pipe产生的文件描述符，历史上，该管道是半双工的(即同一时刻只能有一端发送，一端接受)，mac上目前还是半双工的，某些系统支持全双工管道
  * ----------管道----------
  *
- * pututxline(utmpx *)
+ * pututxline(utmpx *)m
  * getutxline(utmpx *)
  * getutxid(utpmx *)
  * getutxent(void)
@@ -305,7 +402,7 @@ void printPending(FILE * io,const char * msg)
  * tcgetsid(fd) 获取会话首进程的进程组id
  * tcsetpgrp(fd,pid) 将fd关联终端的前台组id设置为会话中的另一个进程组id
  * tcgetpgrp(fd) fd为终端关联的文件描述符，返回前台进程组id
- * setsid(pid) 创建一个新会话
+ * setsid() 创建一个新会话，会话id为调用进程的进程id
  * getsid() 获取进程的会话id
  * setpgid(pid,pgid) 如果pid为0，则等价于getpid()，如果pgid为0，也等于getpid()
  * setpgrp() 将调用进程的进程组id设置为调用进程的进程id
@@ -635,7 +732,7 @@ void printPending(FILE * io,const char * msg)
  * read(fd,buf,len) 文件空洞是可以读的，只不过读到的数据是0，对于一般的文本文件读取，如果文件为空会返回0，而对于一般的慢速设备比如socket，如果当前socket缓冲区内无数据，则会阻塞，如果设置为非阻塞模式，当无数据时，则会返回-1，并且将错误码设置为EAGAIN，如果另一段已经关闭，则返回0，read会读取换行符
  * close(fd) 只是进程文件描述符中对应的记录，并将fd所对应的全局文件打开表表项中的标记减一，当标记为0是文件关闭
  * openat(fd|-1,filename|pathname,flags,mode) fd指向filename的目录，或者等于AT_FDCWD，则fd等同于进程当前工作目录fd
- * open(path,flag,mode) flag = O_RDONLY|O_WRONLY|O_RDWR|O_APPEND|O_CLOEXEC|O_CREAT|O_DIRECTORY|O_EXCL|O_NOCTTY|O_NOFOLLOW|O_NONBLOCK|O_SYNC|O_TRUNC|O_DSYNC|O_FSYNC
+ * open(const char *path, int flag, int mode) flag = O_RDONLY|O_WRONLY|O_RDWR|O_APPEND|O_CLOEXEC|O_CREAT|O_DIRECTORY|O_EXCL|O_NOCTTY|O_NOFOLLOW|O_NONBLOCK|O_SYNC|O_TRUNC|O_DSYNC|O_FSYNC
  *
  *
  * 开头为l为不对符号链接解引用，直接操控符号链接文件的inode目录项

@@ -30,7 +30,7 @@ int main(int argc,char ** argv)
     hints.ai_family = AF_INET;
     hints.ai_protocol = 0;
     hints.ai_flags = AI_NUMERICSERV|AI_PASSIVE|AI_ADDRCONFIG;
-    if(getaddrinfo(NULL,"59999",&hints,&result)!=0)
+    if(getaddrinfo(NULL,"48888",&hints,&result)!=0)
         exit(-1);
     len = bind(sockfd,result->ai_addr, sizeof(struct sockaddr_in));
     getsockname(sockfd,(struct sockaddr *)&claddr,&len);

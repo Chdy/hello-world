@@ -33,7 +33,7 @@ int serv_listen(const char * name)//用于服务器端，生成一个unix域的�
     memset(&un,0, sizeof(un));
     un.sun_family = AF_UNIX;
     strcpy(un.sun_path,name);
-    len = __offsetof(struct sockaddr_un, sun_path) + strlen(name);
+    len = __offsetof(struct sockaddr_un, sun_path) + strlen(name); //也可以使用SUN_LEN(&un)
 
     if (bind(fd,(struct sockaddr *)&un,len) < 0) {
         rval = -3;

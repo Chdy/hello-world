@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Linux.dir/db.c.o"
+  "CMakeFiles/Linux.dir/socket_http.c.o"
   "Linux.pdb"
   "Linux"
 )

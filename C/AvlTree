@@ -1,0 +1,12 @@
+//
+// Created by 邓岩 on 2019-09-02.
+//
+
+/*
+ * 二叉搜索树
+ * 非常好的二叉树代码，不需要头节点，删除节点后返回删除节点后的树
+ */
+
+# include <stdio.h>
+# include <string.h>
+# include <stdlib.h>

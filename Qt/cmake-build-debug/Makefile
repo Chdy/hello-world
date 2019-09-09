@@ -136,6 +136,33 @@ Qt_autogen/fast:
 	$(MAKE) -f CMakeFiles/Qt_autogen.dir/build.make CMakeFiles/Qt_autogen.dir/build
 .PHONY : Qt_autogen/fast
 
+Qt_autogen/EWIEGA46WW/qrc_icon.o: Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o
+
+.PHONY : Qt_autogen/EWIEGA46WW/qrc_icon.o
+
+# target to build an object file
+Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o:
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o
+.PHONY : Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o
+
+Qt_autogen/EWIEGA46WW/qrc_icon.i: Qt_autogen/EWIEGA46WW/qrc_icon.cpp.i
+
+.PHONY : Qt_autogen/EWIEGA46WW/qrc_icon.i
+
+# target to preprocess a source file
+Qt_autogen/EWIEGA46WW/qrc_icon.cpp.i:
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.i
+.PHONY : Qt_autogen/EWIEGA46WW/qrc_icon.cpp.i
+
+Qt_autogen/EWIEGA46WW/qrc_icon.s: Qt_autogen/EWIEGA46WW/qrc_icon.cpp.s
+
+.PHONY : Qt_autogen/EWIEGA46WW/qrc_icon.s
+
+# target to generate assembly for a file
+Qt_autogen/EWIEGA46WW/qrc_icon.cpp.s:
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.s
+.PHONY : Qt_autogen/EWIEGA46WW/qrc_icon.cpp.s
+
 Qt_autogen/mocs_compilation.o: Qt_autogen/mocs_compilation.cpp.o
 
 .PHONY : Qt_autogen/mocs_compilation.o
@@ -162,33 +189,6 @@ Qt_autogen/mocs_compilation.s: Qt_autogen/mocs_compilation.cpp.s
 Qt_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.s
 .PHONY : Qt_autogen/mocs_compilation.cpp.s
-
-gotocelldialog.o: gotocelldialog.cpp.o
-
-.PHONY : gotocelldialog.o
-
-# target to build an object file
-gotocelldialog.cpp.o:
-	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/gotocelldialog.cpp.o
-.PHONY : gotocelldialog.cpp.o
-
-gotocelldialog.i: gotocelldialog.cpp.i
-
-.PHONY : gotocelldialog.i
-
-# target to preprocess a source file
-gotocelldialog.cpp.i:
-	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/gotocelldialog.cpp.i
-.PHONY : gotocelldialog.cpp.i
-
-gotocelldialog.s: gotocelldialog.cpp.s
-
-.PHONY : gotocelldialog.s
-
-# target to generate assembly for a file
-gotocelldialog.cpp.s:
-	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/gotocelldialog.cpp.s
-.PHONY : gotocelldialog.cpp.s
 
 main.o: main.cpp.o
 
@@ -217,6 +217,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+mainwindow.o: mainwindow.cpp.o
+
+.PHONY : mainwindow.o
+
+# target to build an object file
+mainwindow.cpp.o:
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/mainwindow.cpp.o
+.PHONY : mainwindow.cpp.o
+
+mainwindow.i: mainwindow.cpp.i
+
+.PHONY : mainwindow.i
+
+# target to preprocess a source file
+mainwindow.cpp.i:
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/mainwindow.cpp.i
+.PHONY : mainwindow.cpp.i
+
+mainwindow.s: mainwindow.cpp.s
+
+.PHONY : mainwindow.s
+
+# target to generate assembly for a file
+mainwindow.cpp.s:
+	$(MAKE) -f CMakeFiles/Qt.dir/build.make CMakeFiles/Qt.dir/mainwindow.cpp.s
+.PHONY : mainwindow.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -227,15 +254,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... Qt"
 	@echo "... Qt_autogen"
+	@echo "... Qt_autogen/EWIEGA46WW/qrc_icon.o"
+	@echo "... Qt_autogen/EWIEGA46WW/qrc_icon.i"
+	@echo "... Qt_autogen/EWIEGA46WW/qrc_icon.s"
 	@echo "... Qt_autogen/mocs_compilation.o"
 	@echo "... Qt_autogen/mocs_compilation.i"
 	@echo "... Qt_autogen/mocs_compilation.s"
-	@echo "... gotocelldialog.o"
-	@echo "... gotocelldialog.i"
-	@echo "... gotocelldialog.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... mainwindow.o"
+	@echo "... mainwindow.i"
+	@echo "... mainwindow.s"
 .PHONY : help
 
 

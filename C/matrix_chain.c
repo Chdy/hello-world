@@ -8,6 +8,7 @@
 
 //动态规划处理矩阵链乘法
 
+
 void print_optimal_parens(int (*s)[7], int i, int j) //这里的7为二维数组s的列数
 {
     if (i == j)
@@ -47,7 +48,7 @@ void matrix_chain_order(const int * p, int n)
         }
         printf("\n");
     }
-    print_optimal_parens(s, 1, 6);
+    print_optimal_parens(s, 1, n);
     free(m);
     free(s);
 }

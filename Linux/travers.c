@@ -7,12 +7,12 @@
 int main(int argc,char ** argv) {
     int fd1,fd2;
     int num = 0;
-    int line[200];
+    int line[1000];
     int l = 0;
     char a;
-    if((fd1 = open("/Users/dengyan/f1.txt",O_RDONLY)) == EOF)
+    if((fd1 = open("/Users/dengyan/exam",O_RDONLY)) == EOF)
         exit(-1);
-    if((fd2 = open("/Users/dengyan/f2.txt",O_WRONLY)) == EOF)
+    if((fd2 = open("/Users/dengyan/exam.c",O_WRONLY)) == EOF)
         exit(-1);
     while(read(fd1,&a,1)==1)
     {

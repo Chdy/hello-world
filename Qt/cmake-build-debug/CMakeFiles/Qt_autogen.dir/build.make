@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /Users/dengyan/ClionProjects/Qt/cmake-build-debug
 # Include the progress variables for this target.
 include CMakeFiles/Qt_autogen.dir/progress.make
 
-CMakeFiles/Qt_autogen:
+CMakeFiles/Qt_autogen: ../doc-open.png
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC, UIC and RCC for target Qt"
 	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E cmake_autogen /Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir Debug
 

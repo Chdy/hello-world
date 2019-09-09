@@ -24,7 +24,7 @@
 # include <functional>
 # include <new>
 # include <type_traits>
-#include <random>
+# include <random>
 
 using std::cin;
 using std::cout;
@@ -247,8 +247,67 @@ int isprimer(int i)
     return 1;
 }
 
+class B {
+public:
+    int a;
+};
+
+class C : public B {
+public:
+    int c;
+};
+
+void show(int a,int n)
+{
+    int i;
+    int msk = 1;
+    for(i=0; i<n-1; i++) msk = msk << 1;
+    for(i=0; i<n; i++){
+        printf((a & msk)? "1" : "0");
+        msk = msk >> 1;
+    }
+    printf("\n");
+}
+
+void f(int n)
+{
+    int i;
+    int num = 1;
+    for(i=0; i<n; i++) num = num<<1;
+
+    int a = 0;
+    for(i=0; i<num; i++){
+        show(a,n);
+
+        if(i%2==0){
+            a = a ^ 1;
+        }
+        else{
+            a = ((a ^ ((a - 1)&a)) << 1) ^ a; //填空
+        }
+    }
+}
+
+void ac() {
+    int a = 3;
+    for (int i = 0; i <= 4; i++) {
+        a += i;
+    }
+}
+
+int extgcd(int a, int b, int &x, int &y) {
+    int d = a;
+    if (b != 0) {
+        d = extgcd(b, a%b, y, x);
+        y -= a / b * x;
+    } else {
+        x = 1, y = 0;
+    }
+    return d;
+}
+
 int main() {//16.1.5
-    setbuf(stdout, NULL);
+    //setbuf(stdout, NULL);
     //std::random_device rd;
     //std::mt19937 g(rd());
     //std::ostream_iterator<int> out(cout, " ");
@@ -258,77 +317,18 @@ int main() {//16.1.5
     //cout << a[3] << endl;
     //std::iota(a.begin(),a.end(),1);
     //std::shuffle(a.begin(),a.end(),g);
-
-    int i = 0;
-    int a[100];
-    for (int j = 11; ; ++j) {
-        if (i == 11)
-            break;
-        if (isprimer(j))
-        {
-            cout << j << endl;
-            int k = j;
-            while (k%10) {
-                if (isprimer(k) == 0)
-                    break;
-                k/=10;
-            }
-            if (k != 0)
-                continue;
-
-            cout << j << endl;
-            i++;
-        }
-    }
+    //std::string s;
+    //getline(cin, s);
+    //std::istringstream str(s);
+    //cout << *std::max_element(std::istream_iterator<int>(str), std::istream_iterator<int>()) << endl;
+    int a = 2, b = 3;
+    int x, y;
+    cout <<  extgcd(a, b, x, y) << endl;
+    cout << x << " " << y << endl;
+    return 0;
 }
 
-/*
-     std::string s = "aaa";
-    std::string p = "a*a";
-    char tmp;
-    auto bs = s.begin();
-    auto bp = p.begin();
-    if(*bp == '*')
-        return 0;
-    while(bp != p.end())
-    {
-        if(*bp != '*')
-        {
-            tmp = *bp;
-            if(tmp == '.')
-                bs++;
-            else if(tmp == *bs)
-                bs++;
-            else if(bp != p.end() && *(++bp) == '*')
-                ;
-            else
-                return 0;
-        }
-        else if(tmp == '.')
-        {
-            if(bp == p.end() - 1)
-                return 1;
-            else
-                return 0;
-        }
-        else {
-            while (*bs == tmp) {
-                bs++;
-                if (bs == s.end() && bp + 1 != p.end());
 
-            }
-        }
-        bp++;
-        if(bs > s.end())
-            return 0;
-    }
-    if(bs == s.end())
-        cout << "ok" << endl;
-        //return 0;
-    else
-        cout << "no"  << endl;
-        //return -1;
- */
 
 
 //std::for_each(b,b+5,[&](A & p) { new (&p) A(); });
@@ -861,11 +861,19 @@ int main() {//16.1.5
 
  * 只有以in模式或者out|app模式打开时不会截断数据，其他情况打开文件，文件数据都会消失，而对0_WRONLY打开的文件进行写时只会造成数据覆盖
  * 文件模式:in|out|app|ate|trunc|binary 分别为以读方式打开，写方式打开，写追加，打开后定位到尾部，截断文件，以二进制打开，当使用这些常量时，需在前面加上所属的命名空间，以ifstream类型打开时默认指定in文件模式(O_RDONLY)，ofstream会指定out模式(O_WRONLY)，fstream以in和out模式打开(O_RDWR)
- * fstream:fstream;可以理解为FILE *类型，fstream(s);可以理解位fopen，fstream(s,mode)带模式的fopen，fstream.open(s)与fstrm(s)差不多，fstream().close()，fstream.is_open()返回一个bool查看是否正确打开
+ * fstream:fstream;可以理解为FILE *类型，fstream(s);可以理解位fopen，fstream(s,mode)带模式的fopen，fstream.open(s)与fstream(s)差不多，fstream().close()，fstream.is_open()返回一个bool查看是否正确打开
  * 流关联:当从输入流读取时，会将所关联的输出流的传冲去的数据输出，可以使用流的成员函数tie()进行操作，无参数版本返回当前所关联的流，也有一个参数的重载版本，将流与参数的流相关联，如用null指针作为参数则可取消其关联的流，一个流只能关联一个流，但一个ostream流可以被多个流同时关联
  * 管理输出缓冲:可在 << 操作符后接上endl,ends,flush中的一个冲刷缓冲区，分别会在结尾加上换行符，一个空字符，什么都不加，用cout << unitbuf;后会使接下来的每一次输出操作都刷新缓冲区，使用cout << nounitbuf可以恢复正常的缓冲方式
  * IO条件状态:以下类型均在某种IO类型的命名空间内所定义的常量，括号类表示其常量值，如iostream::iostate，iostate:表示条件状态，badbit(4):指出流已经崩溃，failbit(1):指出IO操作失败，eofbit(2):指出流已经到达文件尾端，goodbit(0):指出流未处于错误状态，成员函数:eof()，fail()，bad()，good()分别返回对应位的信息，若已置位，则返回true，clear()复位所有状态位，clear(iostate falg)复位falg所指定的位，setstate(iostate flag)设置对应的位置位，rdstate()，返回当前的条件状态
  * IO对象无拷贝或赋值，可以通过引用传递和返回流
+ * std::ostringstream s; //数值类型转字符串
+    s << 12.0;
+    cout << s.str() << endl;
+ *
+ * std::istringstream s("abc|def|ksd"); //split实现
+    string a;
+    while (std::getline(s, a, '|'))
+        cout << a << endl;
  * IO类:头文件iostream:istream,wistream从流中读取数据，ostream,wostream向流中写入数据，iostream，wiostream读写流；头文件fstream:ifstream,wifstream向文件读取数据，ofstream,wofstream向文件写入数据，fstream，wfstream读写文件；istringstream,wstringstream从string中读取数据，ostringstream，wostringstream向string中写入数据，stringstream，wstringstream读写string
  * IO类型间的关系:ifstream istringstream都继承istream类，则在使用isteam类的地方可以使用ifsteam和istringstream
  * 静态成员的使用场合:静态数据成员类型可以是不完全类型，比如它可以是它所属的类类型，或者是将其作为默认实参

@@ -123,32 +123,32 @@ Linux/fast:
 	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/build
 .PHONY : Linux/fast
 
-db.o: db.c.o
+socket_http.o: socket_http.c.o
 
-.PHONY : db.o
+.PHONY : socket_http.o
 
 # target to build an object file
-db.c.o:
-	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/db.c.o
-.PHONY : db.c.o
+socket_http.c.o:
+	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/socket_http.c.o
+.PHONY : socket_http.c.o
 
-db.i: db.c.i
+socket_http.i: socket_http.c.i
 
-.PHONY : db.i
+.PHONY : socket_http.i
 
 # target to preprocess a source file
-db.c.i:
-	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/db.c.i
-.PHONY : db.c.i
+socket_http.c.i:
+	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/socket_http.c.i
+.PHONY : socket_http.c.i
 
-db.s: db.c.s
+socket_http.s: socket_http.c.s
 
-.PHONY : db.s
+.PHONY : socket_http.s
 
 # target to generate assembly for a file
-db.c.s:
-	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/db.c.s
-.PHONY : db.c.s
+socket_http.c.s:
+	$(MAKE) -f CMakeFiles/Linux.dir/build.make CMakeFiles/Linux.dir/socket_http.c.s
+.PHONY : socket_http.c.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Linux"
-	@echo "... db.o"
-	@echo "... db.i"
-	@echo "... db.s"
+	@echo "... socket_http.o"
+	@echo "... socket_http.i"
+	@echo "... socket_http.s"
 .PHONY : help
 
 

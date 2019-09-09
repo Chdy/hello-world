@@ -1,0 +1,3 @@
+/Users/dengyan/ClionProjects/OpenCV/CMakeFiles/rebuild_cache.dir
+/Users/dengyan/ClionProjects/OpenCV/CMakeFiles/edit_cache.dir
+/Users/dengyan/ClionProjects/OpenCV/CMakeFiles/OpenCV.dir

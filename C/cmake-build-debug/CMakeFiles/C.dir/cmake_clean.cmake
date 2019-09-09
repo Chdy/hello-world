@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/C.dir/haffman.c.o"
+  "CMakeFiles/C.dir/SearchTree.c.o"
   "C.pdb"
   "C"
 )

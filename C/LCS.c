@@ -6,12 +6,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-
-#define top '——'
-#define left '|'
-#define  lp '\\'
+# include <sys/stat.h>
+# include <fcntl.h>
 
 void LCS_PRINT(char ** t, char * y, int i, int j)
 {

@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/dengyan/ClionProjects/Qt/cmake-build-debug/Qt_autogen/EWIEGA46WW/qrc_icon.cpp" "/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles/Qt.dir/Qt_autogen/EWIEGA46WW/qrc_icon.cpp.o"
   "/Users/dengyan/ClionProjects/Qt/cmake-build-debug/Qt_autogen/mocs_compilation.cpp" "/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o"
-  "/Users/dengyan/ClionProjects/Qt/gotocelldialog.cpp" "/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles/Qt.dir/gotocelldialog.cpp.o"
   "/Users/dengyan/ClionProjects/Qt/main.cpp" "/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles/Qt.dir/main.cpp.o"
+  "/Users/dengyan/ClionProjects/Qt/mainwindow.cpp" "/Users/dengyan/ClionProjects/Qt/cmake-build-debug/CMakeFiles/Qt.dir/mainwindow.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

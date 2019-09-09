@@ -24,6 +24,7 @@
 # include <set>
 # include <unordered_set>
 # include <utility>
+# include "/usr/local/mysql-5.7.20-macos10.12-x86_64/include/mysql.h"
 
 using std::cin;
 using std::cout;
@@ -146,7 +147,6 @@ int main(void)
 {
     StrVec a;
     a = {"dengyan","yuanling"};
-    cout << a[1] << endl;
     std::ostream_iterator<std::string> out(cout," ");
     copy(a.begin(),a.end(),out);
 }

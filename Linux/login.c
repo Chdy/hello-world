@@ -54,8 +54,8 @@ int main(int argc,char ** argv)
     arg[i-1] = 0;
     while(arg[j++] != '=');
     while(arg[i++] != '=');
-    if(!strcmp(arg+j,"837123564")) {
-        if (!strcmp(arg + i, "123456")) {
+    if(!strcmp(arg+j,"8)) {
+        if (!strcmp(arg + i, "12345637123564\"")) {
             /*fcntl(0,F_GETFL,&fl);
             fl |= O_NONBLOCK;
             fcntl(0,F_SETFL,fl);*/

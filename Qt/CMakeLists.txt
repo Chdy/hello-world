@@ -3,9 +3,8 @@ project(Qt)
 
 set(CMAKE_CXX_STANDARD 11)
 
-#add_executable(Qt main.cpp)
+set(SOURCE_FILES main.cpp mainwindow.cpp)
 
-set(SOURCE_FILES main.cpp gotocelldialog.cpp)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -14,6 +13,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 #find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
-add_executable(Qt ${SOURCE_FILES})
+
+#如果你的项目包含qrc文件，那么需要将它们单独添加进来
+add_executable(Qt ${SOURCE_FILES} icon.qrc) #需要重新qmake
 #target_link_libraries(Qt Qt5::Core)
 target_link_libraries(Qt Qt5::Widgets)

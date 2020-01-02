@@ -4,6 +4,7 @@
 
 /*
  * 二叉搜索树
+ * 非常好的二叉树代码，不需要头节点，删除节点后返回删除节点后的树
  */
 
 # include <stdio.h>
@@ -73,7 +74,7 @@ SearchTree Insert(SearchTree T, int x) {
 SearchTree Delete(SearchTree T, int x) {
 	if (T == NULL)
 		return NULL;
-	if (T->v > x) //删除点在左子树上
+	if (T->v > x) //删除点在左子树上 
 		T->left = Delete(T->left, x);
 	else if (T->v < x) //删除点在右子树上
 		T->right = Delete(T->right, x); 
@@ -122,7 +123,9 @@ int main(void) {
 		scanf("%d", &x);
 		T = Insert(T, x);
 	}
-	T = Delete(T, 5);
+	T = Delete(T, 5); 
+	//赋值给T，防止树中只有根节点一个节点，而且正好删除的是根节点
+	//这样能让T指向NULL，而不是被free后的节点
 	MidTraverse(T);
 	return 0;
 }

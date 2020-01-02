@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="Linux" targetName="Linux" />
     </generated>
@@ -12,135 +12,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="030030c5-1157-4fdb-b8fc-7558491f308c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../C++/8queue.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/Cardelvxingluxian.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/Fit.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/Student.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/benxiaohou.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/c++exam.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/dacengdelvfei.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/date.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/digongqubao.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/duijupipei.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/hengxiangdayingerchashu.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/lanqiao.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/leetcode-10.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/leetcode-84.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/lianhaoqujian.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/qingwatiaobeizi.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/riqiwenti.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/text.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/tuxingpaiban.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/weixianxishu.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/xingyunshu.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/xuebademigong.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/youqimianji.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/yueshubeishuxuankapian.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C++/zuixiaofangchashengchengshu.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C/LIS.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C/disjoint-sets.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C/thread_tree.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Maze.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/arp.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/daemon.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/echo_server.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/select_echo.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/time_server.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unp.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/write-section.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Qt/doc-open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Qt/icon.qrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Qt/mainwindow.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Qt/mainwindow.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Qt/newspaper.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Qt/reader.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C++/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C++/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++/StrVec.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/StrVec.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/C++" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/C++" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/C++.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/C++.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/C++.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C++/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C++/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../C++/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../C/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/2tree_list.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/2tree_list.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/AvlTree" beforeDir="false" afterPath="$PROJECT_DIR$/../C/AvlTree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/AvlTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/AvlTree.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../C/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/LCS.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/LCS.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/btree.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/b-tree.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/C" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/C" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/SearchTree.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/SearchTree.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/C.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/C.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/C.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../C/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../C/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/matrix_chain.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/matrix_chain.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/orderstack.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/orderstack.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/queue.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/queue.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../C/rb_tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/../C/rb_tree.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/a.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/C.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/checkopts.c.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/db.c.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/echo_server.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/test.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/msg_server.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/socket_http.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/socket_http.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/socketpair_msgget_server.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/system_tcp_server.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/travers.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/unix_domain_api_server.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Linux.dir/unix_open_client.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Linux" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Linux" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Linux.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Linux.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linux.h" beforeDir="false" afterPath="$PROJECT_DIR$/linux.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.c" beforeDir="false" afterPath="$PROJECT_DIR$/login.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socket_http.c" beforeDir="false" afterPath="$PROJECT_DIR$/socket_http.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system_tcp_server.c" beforeDir="false" afterPath="$PROJECT_DIR$/system_tcp_server.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/test.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/travers.c" beforeDir="false" afterPath="$PROJECT_DIR$/travers.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unix_socket_api.h" beforeDir="false" afterPath="$PROJECT_DIR$/unix_socket_api.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/Qt_autogen/mocs_compilation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/AutogenInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/AutogenOldSettings.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/AutogenOldSettings.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/Qt_autogen.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/Qt" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/Qt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/Qt.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/Qt.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/cmake-build-debug/Qt_autogen/mocs_compilation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/cmake-build-debug/Qt_autogen/mocs_compilation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Qt/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Qt/main.cpp" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
-    <ignored path="$PROJECT_DIR$/.idea/shelf/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -400,89 +354,6 @@
       </favorite_root>
     </favorites_list>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11085">
-              <caret line="739" selection-start-line="739" selection-end-line="739" />
-              <folding>
-                <element signature="e#149#203#0" expanded="true" />
-                <element signature="e#615#638#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeCache.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="144" selection-start-line="144" selection-end-line="144" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="socket_http.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/socket_http.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="283" column="35" selection-start-line="283" selection-start-column="35" selection-end-line="283" selection-end-column="35" />
-              <folding>
-                <element signature="e#170#188#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="httpd.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/httpd.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3945">
-              <caret line="263" column="22" selection-start-line="263" selection-start-column="22" selection-end-line="263" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="color.cgi" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/color.cgi">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>socket</find>
@@ -527,78 +398,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/pthread_cond_timedwait.c" />
-        <option value="$PROJECT_DIR$/rio.h" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/login.c.c" />
-        <option value="$PROJECT_DIR$/index1.html" />
-        <option value="$PROJECT_DIR$/msg_server.c" />
-        <option value="$PROJECT_DIR$/msg_client.c" />
-        <option value="$PROJECT_DIR$/unix_domain_dgram_server.c" />
-        <option value="$PROJECT_DIR$/socketpair_msgget_server.cpp" />
-        <option value="$PROJECT_DIR$/socketpair_msgget_client.c" />
-        <option value="$PROJECT_DIR$/socketpair_msgget_server.c" />
-        <option value="$PROJECT_DIR$/unix_socket_api.c" />
-        <option value="$PROJECT_DIR$/aiocb.c" />
-        <option value="$PROJECT_DIR$/exam.c" />
-        <option value="$PROJECT_DIR$/unix_domain_api_client.c" />
-        <option value="$PROJECT_DIR$/unix_domain_api_server.c" />
-        <option value="$PROJECT_DIR$/fd_send_case.c" />
-        <option value="$PROJECT_DIR$/open_client.c" />
-        <option value="$PROJECT_DIR$/opend.c" />
-        <option value="$PROJECT_DIR$/send_fd.h" />
-        <option value="$PROJECT_DIR$/open_server.c" />
-        <option value="$PROJECT_DIR$/unix_open_client.c" />
-        <option value="$PROJECT_DIR$/unix_open_server.c" />
-        <option value="$PROJECT_DIR$/rwlock.c" />
-        <option value="$PROJECT_DIR$/rwlock.h" />
-        <option value="$PROJECT_DIR$/apue_db.h" />
-        <option value="$PROJECT_DIR$/db.c" />
-        <option value="$PROJECT_DIR$/db.c.brk" />
-        <option value="$PROJECT_DIR$/travers.c" />
-        <option value="$PROJECT_DIR$/Maze.c" />
-        <option value="$PROJECT_DIR$/arp.c" />
-        <option value="$PROJECT_DIR$/write-section.c" />
-        <option value="$PROJECT_DIR$/system_tcp_server.c" />
-        <option value="$PROJECT_DIR$/addrinfo.h" />
-        <option value="$PROJECT_DIR$/unp.h" />
-        <option value="$PROJECT_DIR$/checkopts.c" />
-        <option value="$PROJECT_DIR$/echo_server.c" />
-        <option value="$PROJECT_DIR$/select_echo.c" />
-        <option value="$PROJECT_DIR$/error.c" />
-        <option value="$PROJECT_DIR$/daemon.c" />
-        <option value="$PROJECT_DIR$/time_server.c" />
-        <option value="$PROJECT_DIR$/fd_recv_case.c" />
-        <option value="$PROJECT_DIR$/unix_socket_api.h" />
-        <option value="$PROJECT_DIR$/linux.h" />
-        <option value="$PROJECT_DIR$/unp.c" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/proxy.c" />
-        <option value="$PROJECT_DIR$/test.c" />
-        <option value="$PROJECT_DIR$/socket_http.c" />
-        <option value="$PROJECT_DIR$/httpd.c" />
-        <option value="$PROJECT_DIR$/login.c" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="805" />
   </component>
+  <component name="ProjectId" id="1Ve7HEB8IZ3Y8gE4IczNShRkAIH" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -616,30 +422,11 @@
     </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <autoscrollFromSource ProjectPane="true" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Linux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Linux" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Linux" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Linux" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/dengyan/ClionProjects/Linux/apue_db.h&#10;socketpair&#9;FILE&#9;file:///Users/dengyan/ClionProjects/Linux/socketpair_msgget_server.c" />
@@ -650,96 +437,7 @@
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Linux">
-    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Linux" TARGET_NAME="Linux" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST" />
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Linux" RUN_TARGET_NAME="Linux" EXPLICIT_BUILD_TARGET_NAME="all" />
-    <configuration name="Linux" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Linux" TARGET_NAME="Linux" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Linux" RUN_TARGET_NAME="Linux" />
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Linux" TARGET_NAME="Linux" CONFIG_NAME="Debug" />
-    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
-      <method />
-    </configuration>
-    <configuration default="true" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
-      <method />
-    </configuration>
-    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeWebKit" factoryName="NW.js">
-      <method />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Linux" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Linux" />
-      <method />
-    </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="CMake Application.Linux">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -759,108 +457,57 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Linux" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method />
+    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Linux" TARGET_NAME="Linux" CONFIG_NAME="Debug" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="tests" factoryName="Nosetests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Linux" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Linux" RUN_TARGET_NAME="Linux" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Linux" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
+    <configuration name="Linux" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Linux" TARGET_NAME="Linux" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Linux" RUN_TARGET_NAME="Linux">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="tests" factoryName="py.test">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Linux" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="" />
-      <option name="keywords" value="" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="false" />
-      <method />
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Linux" TARGET_NAME="Linux" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+    <configuration default="true" type="js.build_tools.grunt">
       <node-interpreter value="project" />
       <envs />
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+    <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
       <arguments />
       <envs />
+      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Build All" />
-      <item itemvalue="Application.Linux" />
+      <item itemvalue="CMake Application.Build All" />
+      <item itemvalue="CMake Application.Linux" />
     </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="StructureViewFactory">
     <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
@@ -1068,6 +715,9 @@
       <workItem from="1561988222670" duration="756000" />
       <workItem from="1562030702778" duration="9000" />
       <workItem from="1562035310097" duration="18000" />
+      <workItem from="1577601620565" duration="367000" />
+      <workItem from="1577613808718" duration="4000" />
+      <workItem from="1577614525699" duration="99000" />
     </task>
     <task id="LOCAL-00001" summary="Commit - @ Sat Oct 20 09:21:50 CST 2018">
       <created>1539998615569</created>
@@ -1079,62 +729,6 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1110675000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <flatten-packages value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="805" extended-state="0" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48670757" visible="true" weight="0.19661734" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32768363" />
-      <window_info anchor="bottom" id="CMake" order="11" weight="0.32768363" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50951374" side_tool="true" weight="0.30932203" />
-      <window_info anchor="bottom" x="28" y="532" width="1394" height="239" id="Run" order="2" sideWeight="0.49048626" weight="0.30932203" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32909605" />
-      <window_info id="Structure" order="2" sideWeight="0.51329243" side_tool="true" weight="0.19661734" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49541932" weight="0.32768363" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3983051" />
-      <window_info id="Favorites" order="1" sideWeight="0.51329243" side_tool="true" weight="0.19661734" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49964765" weight="0.32344633" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32880434" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.490113" visible="true" weight="0.19661734" />
-      <window_info id="Structure" order="2" sideWeight="0.509887" side_tool="true" weight="0.19661734" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32768363" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32909605" />
-      <window_info anchor="bottom" x="28" y="532" width="1394" height="239" id="Run" order="2" sideWeight="0.49162012" weight="0.30932203" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3983051" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32344633" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32768363" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5083799" side_tool="true" weight="0.3125" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32880434" />
-      <window_info anchor="bottom" id="CMake" order="11" visible="true" weight="0.32768363" />
-      <window_info id="Favorites" order="1" sideWeight="0.5170843" side_tool="true" weight="0.25795054" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -1144,291 +738,38 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit - @ Sat Oct 20 09:21:50 CST 2018" />
     <option name="LAST_COMMIT_MESSAGE" value="Commit - @ Sat Oct 20 09:21:50 CST 2018" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="16" />
-    </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/httpd.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3885">
-          <caret line="259" column="21" lean-forward="true" selection-start-line="259" selection-start-column="21" selection-end-line="259" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addrinfo.h" />
-    <entry file="file://$PROJECT_DIR$/inet_socket_stream_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179" />
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/libkern/_OSByteOrder.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_endian.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/netinet/in.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/arpa/inet.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/netinet6/in6.h" />
-    <entry file="file://$PROJECT_DIR$/select_echo.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/echo_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/syslog.h" />
-    <entry file="file://$PROJECT_DIR$/checkopts.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-761">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/netinet/tcp.h" />
-    <entry file="file://$PROJECT_DIR$/unp.h" />
-    <entry file="file://$PROJECT_DIR$/error.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/_types/_iovec_t.h" />
-    <entry file="file://$PROJECT_DIR$/daemon.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/time_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/event.h" />
-    <entry file="file://$PROJECT_DIR$/socketpair_open_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unix_domain_api_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unix_domain_api_client.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socketpair_msgget_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1058" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socketpair_open_client.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="71" column="64" lean-forward="true" selection-start-line="71" selection-start-column="64" selection-end-line="71" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/un.h" />
-    <entry file="file://$PROJECT_DIR$/unix_open_client.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-546">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unix_open_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unix_domain_dgram_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socketpair_msgget_client.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fd_recv_case.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fd_send_case.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unix_socket_api.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/send_fd.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/net/route.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/net/pfkeyv2.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/net/if.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/sys/socket.h" />
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/net/if_arp.h" />
-    <entry file="file://$PROJECT_DIR$/linux.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unp.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/proxy.cpp" />
-    <entry file="file://$PROJECT_DIR$/proxy.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4140">
-          <caret line="276" column="30" selection-start-line="276" selection-start-column="30" selection-end-line="276" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="144" selection-start-line="144" selection-end-line="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11085">
-          <caret line="739" selection-start-line="739" selection-end-line="739" />
-          <folding>
-            <element signature="e#149#203#0" expanded="true" />
-            <element signature="e#615#638#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/color.cgi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="37" selection-start-line="67" selection-start-column="37" selection-end-line="67" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/httpd.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3945">
-          <caret line="263" column="22" selection-start-line="263" selection-start-column="22" selection-end-line="263" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socket_http.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="283" column="35" selection-start-line="283" selection-start-column="35" selection-end-line="283" selection-end-column="35" />
-          <folding>
-            <element signature="e#170#188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577601645550">
+      <screen x="0" y="23" width="1440" height="805" />
+    </state>
+    <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.805@0.23.1440.805" timestamp="1577601645550" />
+    <state width="1398" height="192" key="GridCell.Tab.0.bottom" timestamp="1577614623917">
+      <screen x="0" y="23" width="1440" height="805" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.bottom/0.23.1440.805@0.23.1440.805" timestamp="1577614623917" />
+    <state width="1398" height="192" key="GridCell.Tab.0.center" timestamp="1577614623915">
+      <screen x="0" y="23" width="1440" height="805" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.center/0.23.1440.805@0.23.1440.805" timestamp="1577614623915" />
+    <state width="1398" height="192" key="GridCell.Tab.0.left" timestamp="1577614623914">
+      <screen x="0" y="23" width="1440" height="805" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.left/0.23.1440.805@0.23.1440.805" timestamp="1577614623914" />
+    <state width="1398" height="192" key="GridCell.Tab.0.right" timestamp="1577614623916">
+      <screen x="0" y="23" width="1440" height="805" />
+    </state>
+    <state width="1398" height="192" key="GridCell.Tab.0.right/0.23.1440.805@0.23.1440.805" timestamp="1577614623916" />
   </component>
   <component name="masterDetails">
     <states>

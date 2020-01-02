@@ -3,5 +3,5 @@ project(C)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES SearchTree.c)
+set(SOURCE_FILES AvlTree.c)
 add_executable(C ${SOURCE_FILES})
